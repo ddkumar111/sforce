@@ -2,7 +2,7 @@ public class Account_Contact {
 
 
          
-
+		//Properties for the account
         public Account  acc{get; set;}
         public Contact  conts{get; set;}
           
