@@ -1,0 +1,32 @@
+<apex:page showHeader="false" sidebar="false">
+    <apex:form >
+    	<style>
+    		.buttonCls {
+	    		padding: 4px 21px;
+			    margin-left: 10%;
+			    margin-top: 2%;
+    		}
+    	</style> 
+    	
+    	
+    	
+        <marquee width="50%"> Select your file and Upload to Salesforce </marquee> <br/>
+        						
+             <button class="buttonCls" type="button" onclick="popupCenter();">Attach Files</button> 
+        
+    </apex:form>
+<script>
+function popupCenter() {
+
+var w = screen.width; 
+w= w/2; 
+var h = screen.height; 
+h=h/2; 
+
+var mW = window.open('/apex/AttachmentPopPage', '',"width=600,height=430,scrollbars=yes"); 
+mW.moveTo(w-310 , h-200); 
+
+} 
+</script>
+    
+</apex:page>

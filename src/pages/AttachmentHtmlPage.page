@@ -1,0 +1,72 @@
+<apex:page controller="AttachmentHtmlController" sidebar="false" showHeader="false" id="pg">
+  
+    <!-- Page Form -->
+    <apex:form id="theForm">
+        
+        <!-- Custom style class --> 
+        <style>
+            .buttonCls {
+                margin-left: 20%;
+                padding: 5px 12px; 
+            }
+            
+            #blockbtn{
+                margin-right: 30% !important;
+            }
+        </style>
+    
+        <!-- Page SectionHeader -->
+        <apex:sectionHeader title="Attach File" /> 
+        
+        <!-- PageBlock -->
+        <apex:pageBlock id="pb">
+            
+            <apex:pageMessages />
+            <!-- PageBlockSection -->
+            <apex:pageBlockSection columns="1" id="pbs"> 
+                <apex:inputField value="{!lead.Company}"/>
+                <apex:inputField value="{!lead.FirstName}"/>
+                <apex:inputField value="{!lead.LastName}"/>
+                <apex:inputField value="{!lead.Description}"/>
+                
+                <apex:inputHidden value="{!lead.Attach_Key__c}" id="hiddenId"/>
+                
+                <button class="buttonCls" type="button" onclick="popupCenter();">Attach Files</button>  
+            </apex:pageBlockSection>
+            
+            <!-- PageBlockButtons -->
+            <apex:pageBlockButtons location="bottom" id="blockbtn">
+                <apex:commandButton action="{!submit}"  value="Submit" id="submitbtn"/>
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    
+    
+    
+    </apex:form>
+
+<!-- Add the script  -->
+    
+<script>
+ 
+function popupCenter() {
+
+var w = screen.width; 
+w= w/2; 
+var h = screen.height; 
+h=h/2; 
+
+var mW = window.open('/apex/AttachmentPopPage', '',"width=600,height=450,scrollbars=yes"); 
+mW.moveTo(w-310 , h-200); 
+
+}
+
+function getValueOfAttachKey(uniId) {
+	
+	document.getElementById("pg:theForm:pb:pbs:hiddenId").value = uniId;
+	
+	alert('valueofAttach' + document.getElementById("pg:theForm:pb:pbs:hiddenId").value);
+	
+}
+</script>      
+</apex:page>

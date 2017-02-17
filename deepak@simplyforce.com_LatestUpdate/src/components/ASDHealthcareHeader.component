@@ -1,0 +1,44 @@
+<!--
+/**         
+  * Description     :   This is the header component for the ASDHealthcare App
+  *      
+  * Created By      :   Bhavi Sharma
+  *
+  * Created Date    :   08/24/2015
+  *
+  * Version         :   V_1.0 Created
+  *
+  **/
+-->
+<apex:component > 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1 class="logo"><a href="#"><img id="logoId" src="{!URLFOR($Resource.ASDHealthcare,'img/logo-asd-healthcare.png')}" alt="Asd Healthcare" /></a></h1></div>
+            <div class="col-sm-6">
+                <div class="banner cycle-slideshow" data-cycle-timeout="800" data-cycle-speed="1500" data-cycle-pause-on-hover="true" data-cycle-slides="> div" data-cycle-log="false">
+                    <div class="banner-item">
+                        <a href="https://www.asdhealthcare.com/products/influenza-vaccines" target="_blank"><img src="{!URLFOR($Resource.ASDHealthcare,'img/banner-top/ASD-Healthcare_Flu_468x60.jpg')}" /></a>
+                    </div>
+                    <!--<div class="banner-item">
+                        <img src="{!URLFOR($Resource.ASDHealthcare,'img/banner-top/ASD-Healthcare-FluFirstAID-Banner-468-x-60.png')}" />
+                    </div>
+                    <div class="banner-item">
+                        <img src="{!URLFOR($Resource.ASDHealthcare,'img/banner-top/BIOTEST-250_ASD_Banner_468X60_4.28.15_sw[2].gif')}" />
+                    </div>-->
+                </div>                  
+            </div>
+        </div>
+    </div>
+    <style> 
+        @media (min-width: 768px){
+        h2.the-title {
+            margin-bottom: 9px;
+            font-size: 28px;
+        }
+        #content .full-widtd {
+        margin-right: -1px;
+        }
+        }
+    </style>
+</apex:component>

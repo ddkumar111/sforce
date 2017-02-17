@@ -1,0 +1,58 @@
+<apex:component >
+  <html lang="en">
+      <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+        <title>TLS</title>
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+        <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+      </head>
+
+      <body>
+        <!-- top part of page -->
+        <div class="wrapper">
+            <!--  <div class="top"></div> -->
+            <div id="header">
+                <div class="container">
+                  <!-- Static navbar -->
+                    <div class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a class="navbar-brand" href="#"><b>Infusion</b> soft </a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+            
+                          <!-- Left nav -->
+                          <ul class="nav navbar-nav">
+                                    <li><a href="#">HOME</a></li>
+                                    <li><a href="#">LEAD</a></li>
+                                    <li><a href="#">ACCOUNTS</a></li>
+                                    <li><a href="#">OPPORTUNITY</a></li>
+                                    <li><a href="#">DASH-BOARD</a></li>
+                                    <li><a href="#">LINKS</a></li>
+                                    <li><a href="#">COMMISSIONS</a></li>
+                                    <li><a href="#">FILES</a></li>
+                          </ul>
+                         </div>
+                    </div>
+                  <div class="search">
+                      <input type="text" placeholder="cummunity search"/>
+                      <input type="button" value="search" class="button"/>
+                  </div>
+              </div>
+        </div>
+        </div>
+    </body>    
+</html>
+</apex:component>

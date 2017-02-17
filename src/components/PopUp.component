@@ -1,0 +1,17 @@
+<apex:component >
+  
+      <apex:attribute name="record" description="The type of record "
+
+                    type="Object" required="true"/>
+
+                      
+
+    <apex:pageBlock title="Viewing {!record}">  
+
+        <apex:detail />
+
+    </apex:pageBlock>
+
+       
+  
+</apex:component>

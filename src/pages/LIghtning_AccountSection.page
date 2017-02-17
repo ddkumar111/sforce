@@ -1,0 +1,81 @@
+<apex:page >
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0121, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        
+        <style>
+            .slds-grid--vertical-align-start {
+                margin-top: 4%;
+            }
+            .anchorCls {
+                cursor: pointer;
+            }
+        </style>
+        
+        <script>
+            function openRecord() {
+                var selectedAccount = document.getElementById('accountValue').value;
+                window.open('/00O28000009mcMl?pv0='+selectedAccount, '_blank');
+            }
+        </script>
+    </head>
+
+    <!-- Form start here -->
+    <div class="form">
+        <div class="slds"> 
+            <div class="slds-form-element__row">
+                <div class="slds-form-element slds-size--1-of-3">
+                    <label class="slds-form-element__label" for="date"> Account Record </label>
+                    <div class="slds-select_container">
+                        <select id="accountValue" class="slds-select">
+                          
+                         </select>    
+                    </div>
+                </div>
+            </div>
+                
+            
+            <div class="slds-grid slds-grid--vertical-align-start">
+                <div class="sectioncls">
+                    <a target="_blank"  onclick="openRecord()" class="anchorCls"> Label 1 </a>
+                    <p>
+                        One of the most important things you need to know about a company is who works there and how to reach them. In Salesforce, the people who work at your accounts are called Contacts. Each account has at least one contact person. 
+                    </p>
+                </div>
+                <div class="sectioncls">
+                    <a target="_blank"  onclick="openRecord()" class="anchorCls"> Label 2 </a>
+                    <p>
+                        One of the most important things you need to know about a company is who works there and how to reach them. In Salesforce, the people who work at your accounts are called Contacts. Each account has at least one contact person. 
+                    </p>
+                </div>
+                <div class="sectioncls">
+                    <a target="_blank"  onclick="openRecord()" class="anchorCls"> Label 3 </a>
+                    <p>
+                        One of the most important things you need to know about a company is who works there and how to reach them. In Salesforce, the people who work at your accounts are called Contacts. Each account has at least one contact person. 
+                    </p>
+                </div>  
+            </div>
+            
+            <div class="slds-grid slds-grid--vertical-align-start">
+                <div class="sectioncls">
+                    <a target="_blank"  onclick="openRecord()" class="anchorCls"> Label 4 </a>
+                    <p>
+                        One of the most important things you need to know about a company is who works there and how to reach them. In Salesforce, the people who work at your accounts are called Contacts. Each account has at least one contact person. 
+                    </p>
+                </div>
+                <div class="sectioncls">
+                    <a target="_blank"  onclick="openRecord()" class="anchorCls"> Label 5 </a>
+                    <p>
+                        One of the most important things you need to know about a company is who works there and how to reach them. In Salesforce, the people who work at your accounts are called Contacts. Each account has at least one contact person. 
+                    </p>
+                </div>
+                <div class="sectioncls">
+                    <a target="_blank"  onclick="openRecord()" class="anchorCls"> Label 6 </a>
+                    <p>
+                        One of the most important things you need to know about a company is who works there and how to reach them. In Salesforce, the people who work at your accounts are called Contacts. Each account has at least one contact person. 
+                    </p>
+                </div>  
+            </div>
+                    
+        </div>
+    </div>    
+</apex:page>

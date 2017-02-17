@@ -1,0 +1,1062 @@
+!SESSION 2017-02-17 12:34:04.646 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data C:\Users\mahendra\gitrepo\master\sforce -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-17 12:34:29.537
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\mahendra'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.event 4 0 2017-02-17 12:34:32.813
+!MESSAGE Exception while dispatching event org.osgi.service.event.Event [topic=org/eclipse/e4/ui/model/application/ApplicationElement/tags/REMOVE] {ChangedElement=org.eclipse.e4.ui.model.application.ui.basic.impl.PartStackImpl@517d9cd5 (elementId: stickyFolderRight, tags: [active], contributorURI: null) (widget: CTabFolder {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer@6dd59886, toBeRendered: false, onTop: false, visible: true, containerData: 2500, accessibilityPhrase: null), Widget=CTabFolder {}, AttName=tags, EventType=REMOVE, Position=1, OldValue=Maximized} to handler org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler@7859bd9a
+!STACK 0
+org.eclipse.e4.core.di.InjectionException: java.lang.IllegalStateException: Application does not have an active window
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:68)
+	at org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler$1.run(UIEventObjectSupplier.java:56)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:186)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:145)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4761)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:211)
+	at org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler.handleEvent(UIEventObjectSupplier.java:53)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:135)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:78)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:39)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:85)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:59)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:374)
+	at org.eclipse.emf.ecore.util.EcoreEList.dispatchNotification(EcoreEList.java:249)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.remove(NotifyingListImpl.java:725)
+	at org.eclipse.emf.common.util.AbstractEList.remove(AbstractEList.java:462)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.subscribeTopicToBeRendered(PartRenderingEngine.java:157)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.di.internal.extensions.EventObjectSupplier$DIEventHandler.handleEvent(EventObjectSupplier.java:83)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:135)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:78)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:39)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:85)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:59)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:374)
+	at org.eclipse.e4.ui.model.application.ui.impl.UIElementImpl.setToBeRendered(UIElementImpl.java:303)
+	at org.eclipse.e4.ui.workbench.addons.cleanupaddon.CleanupAddon$2.run(CleanupAddon.java:317)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:827)
+	at org.eclipse.jface.window.Window.open(Window.java:803)
+	at org.eclipse.ui.internal.handlers.WizardHandler$New.executeHandler(WizardHandler.java:269)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:290)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:295)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:252)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:234)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:152)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:493)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:486)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService.executeCommand(LegacyHandlerService.java:343)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:160)
+	at org.eclipse.ui.internal.actions.CommandAction.run(CommandAction.java:175)
+	at org.eclipse.ui.actions.NewWizardDropDownAction.run(NewWizardDropDownAction.java:188)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:473)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:462)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4180)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3769)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+Caused by: java.lang.IllegalStateException: Application does not have an active window
+	at org.eclipse.e4.ui.internal.workbench.ApplicationPartServiceImpl.getActiveWindowService(ApplicationPartServiceImpl.java:43)
+	at org.eclipse.e4.ui.internal.workbench.ApplicationPartServiceImpl.requestActivation(ApplicationPartServiceImpl.java:82)
+	at org.eclipse.e4.ui.internal.workbench.ApplicationPartServiceImpl.requestActivation(ApplicationPartServiceImpl.java:82)
+	at org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon.unzoom(MinMaxAddon.java:826)
+	at org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon.subscribeTopicTagsChanged(MinMaxAddon.java:372)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	... 96 more
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:35:36.186
+!MESSAGE  WARN [2017-02-17 12:35:36,167] (ConnectionFactory.java:clearCache:217) - No cached connections
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:35:36.191
+!MESSAGE  WARN [2017-02-17 12:35:36,187] (DescribeObjectRegistry.java:clearCache:661) - No cached describes
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:35:36.192
+!MESSAGE  WARN [2017-02-17 12:35:36,191] (MetadataFactory.java:clearCache:126) - No cached metadata stubs
+
+
+!ENTRY org.eclipse.core.jobs 2 2 2017-02-17 12:35:36.681
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.epp.internal.logging.aeri.ui.log.ProblemsDatabaseUpdateJob
+!SESSION 2017-02-17 12:38:29.072 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -data C:\Users\mahendra\gitrepo\master\sforce -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-17 12:38:42.638
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\mahendra'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:23.232
+!MESSAGE  WARN [2017-02-17 12:41:23,222] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'AuraDefinitionBundle': Unable to get bean for id 'AuraDefinitionBundle'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:23.242
+!MESSAGE  WARN [2017-02-17 12:41:23,234] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:23.245
+!MESSAGE  WARN [2017-02-17 12:41:23,243] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'NamedCredential': Unable to get bean for id 'NamedCredential'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:23.281
+!MESSAGE  WARN [2017-02-17 12:41:23,279] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'MatchingRules': Unable to get bean for id 'MatchingRules'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:23.284
+!MESSAGE  WARN [2017-02-17 12:41:23,282] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'ChannelLayout': Unable to get bean for id 'ChannelLayout'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:23.287
+!MESSAGE  WARN [2017-02-17 12:41:23,285] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'SharingRules': Unable to get bean for id 'SharingRules'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:23.292
+!MESSAGE  WARN [2017-02-17 12:41:23,290] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'ManagedTopics': Unable to get bean for id 'ManagedTopics'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:23.295
+!MESSAGE  WARN [2017-02-17 12:41:23,293] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'CorsWhitelistOrigin': Unable to get bean for id 'CorsWhitelistOrigin'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:23.297
+!MESSAGE  WARN [2017-02-17 12:41:23,296] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'ActionLinkGroupTemplate': Unable to get bean for id 'ActionLinkGroupTemplate'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:23.301
+!MESSAGE  WARN [2017-02-17 12:41:23,299] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'SynonymDictionary': Unable to get bean for id 'SynonymDictionary'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:24.610
+!MESSAGE  WARN [2017-02-17 12:41:24,608] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'AuraDefinitionBundle': Unable to get bean for id 'AuraDefinitionBundle'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:24.614
+!MESSAGE  WARN [2017-02-17 12:41:24,612] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:24.616
+!MESSAGE  WARN [2017-02-17 12:41:24,615] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'NamedCredential': Unable to get bean for id 'NamedCredential'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:24.632
+!MESSAGE  WARN [2017-02-17 12:41:24,630] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'MatchingRules': Unable to get bean for id 'MatchingRules'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:24.635
+!MESSAGE  WARN [2017-02-17 12:41:24,633] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'ChannelLayout': Unable to get bean for id 'ChannelLayout'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:24.640
+!MESSAGE  WARN [2017-02-17 12:41:24,637] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'SharingRules': Unable to get bean for id 'SharingRules'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:24.645
+!MESSAGE  WARN [2017-02-17 12:41:24,643] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'ManagedTopics': Unable to get bean for id 'ManagedTopics'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:24.649
+!MESSAGE  WARN [2017-02-17 12:41:24,647] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'CorsWhitelistOrigin': Unable to get bean for id 'CorsWhitelistOrigin'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:24.651
+!MESSAGE  WARN [2017-02-17 12:41:24,650] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'ActionLinkGroupTemplate': Unable to get bean for id 'ActionLinkGroupTemplate'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:41:24.662
+!MESSAGE  WARN [2017-02-17 12:41:24,655] (ComponentFactory.java:getComponentBean:1154) - Unable to get component for id 'SynonymDictionary': Unable to get bean for id 'SynonymDictionary'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.189
+!MESSAGE  WARN [2017-02-17 12:43:23,187] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce for Social Media/package.xml': Can't retrieve non-customizable CustomObject named: Twitter_Credentials__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.192
+!MESSAGE  WARN [2017-02-17 12:43:23,189] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce for Social Media/package.xml': Can't retrieve non-customizable CustomObject named: Twitter_Configuration__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.194
+!MESSAGE  WARN [2017-02-17 12:43:23,193] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce for Social Media/package.xml': Can't retrieve non-customizable CustomObject named: Fcbk_Credentials__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.195
+!MESSAGE  WARN [2017-02-17 12:43:23,194] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce for Social Media/package.xml': Can't retrieve non-customizable CustomObject named: External_Systems_Credentials__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.198
+!MESSAGE  WARN [2017-02-17 12:43:23,197] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce for Social Media/package.xml': Can't retrieve non-customizable CustomObject named: Twitter_Credentials__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.199
+!MESSAGE  WARN [2017-02-17 12:43:23,198] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce for Social Media/package.xml': Can't retrieve non-customizable CustomObject named: Twitter_Configuration__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.201
+!MESSAGE  WARN [2017-02-17 12:43:23,200] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce for Social Media/package.xml': Can't retrieve non-customizable CustomObject named: Fcbk_Credentials__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.202
+!MESSAGE  WARN [2017-02-17 12:43:23,201] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce for Social Media/package.xml': Can't retrieve non-customizable CustomObject named: External_Systems_Credentials__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.205
+!MESSAGE  WARN [2017-02-17 12:43:23,203] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce1 and Chatter Apps/package.xml': Metadata API received improper input. Please ensure file name and capitalization is correct. Load of metadata from db failed for metadata of type:ConnectedApp and file name:Salesforce1_for_Windows.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.207
+!MESSAGE  WARN [2017-02-17 12:43:23,206] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce1 and Chatter Apps/package.xml': Metadata API received improper input. Please ensure file name and capitalization is correct. Load of metadata from db failed for metadata of type:ConnectedApp and file name:Chatter_for_iOS.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.208
+!MESSAGE  WARN [2017-02-17 12:43:23,207] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce1 and Chatter Apps/package.xml': Metadata API received improper input. Please ensure file name and capitalization is correct. Load of metadata from db failed for metadata of type:ConnectedApp and file name:Salesforce_Chatterbox.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.210
+!MESSAGE  WARN [2017-02-17 12:43:23,209] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce1 and Chatter Apps/package.xml': Metadata API received improper input. Please ensure file name and capitalization is correct. Load of metadata from db failed for metadata of type:ConnectedApp and file name:SalesforceA.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.211
+!MESSAGE  WARN [2017-02-17 12:43:23,210] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce1 and Chatter Apps/package.xml': Metadata API received improper input. Please ensure file name and capitalization is correct. Load of metadata from db failed for metadata of type:ConnectedApp and file name:Chatter_Desktop.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.212
+!MESSAGE  WARN [2017-02-17 12:43:23,211] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce1 and Chatter Apps/package.xml': Metadata API received improper input. Please ensure file name and capitalization is correct. Load of metadata from db failed for metadata of type:ConnectedApp and file name:Chatter_for_BlackBerry.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.214
+!MESSAGE  WARN [2017-02-17 12:43:23,212] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Salesforce1 and Chatter Apps/package.xml': Metadata API received improper input. Please ensure file name and capitalization is correct. Load of metadata from db failed for metadata of type:ConnectedApp and file name:Chatter_for_Android.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.215
+!MESSAGE  WARN [2017-02-17 12:43:23,214] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'SalesforceIQ Inbox/package.xml': Metadata API received improper input. Please ensure file name and capitalization is correct. Load of metadata from db failed for metadata of type:ConnectedApp and file name:SalesforceIQ.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.216
+!MESSAGE  WARN [2017-02-17 12:43:23,215] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Skuid/package.xml': Can't retrieve non-customizable CustomObject named: Encryption_Settings__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.218
+!MESSAGE  WARN [2017-02-17 12:43:23,217] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Skuid/package.xml': Can't retrieve non-customizable CustomObject named: Model_Service__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.219
+!MESSAGE  WARN [2017-02-17 12:43:23,218] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Skuid/package.xml': Can't retrieve non-customizable CustomObject named: Model_Service_Credential__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.221
+!MESSAGE  WARN [2017-02-17 12:43:23,219] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Skuid/package.xml': Can't retrieve non-customizable CustomObject named: Auth_Provider__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.222
+!MESSAGE  WARN [2017-02-17 12:43:23,222] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Skuid/package.xml': Can't retrieve non-customizable CustomObject named: Encryption_Settings__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.226
+!MESSAGE  WARN [2017-02-17 12:43:23,224] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Skuid/package.xml': Can't retrieve non-customizable CustomObject named: Auth_Provider__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.228
+!MESSAGE  WARN [2017-02-17 12:43:23,227] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Skuid/package.xml': Can't retrieve non-customizable CustomObject named: Model_Service__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.231
+!MESSAGE  WARN [2017-02-17 12:43:23,230] (ProjectController.java:handleRetrieveResults:772) - Failed to retrieve: 'Skuid/package.xml': Can't retrieve non-customizable CustomObject named: Model_Service_Credential__c
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.540
+!MESSAGE  WARN [2017-02-17 12:43:23,539] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_Desktop_oauth/ConnectivityDevConfigs/C5r_Desktop_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.545
+!MESSAGE  WARN [2017-02-17 12:43:23,544] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_Desktop_oauth/modules/sf_chttr_apps__C5r_Desktop_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.549
+!MESSAGE  WARN [2017-02-17 12:43:23,546] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'applicationManifests/Chatter_Desktop', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.551
+!MESSAGE  WARN [2017-02-17 12:43:23,550] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_Android_oauth_android/AndroidPushApplicationSetup/C5r_for_Android_oauth_androidAndroidPushApplicationSetup.AndroidPushApplicationSetup', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.554
+!MESSAGE  WARN [2017-02-17 12:43:23,553] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_Android_oauth_android/modules/sf_chttr_apps__C5r_for_Android_oauth_android', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.557
+!MESSAGE  WARN [2017-02-17 12:43:23,556] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_Android_oauth/ConnectivityDevConfigs/C5r_for_Android_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.562
+!MESSAGE  WARN [2017-02-17 12:43:23,559] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_Android_oauth/modules/sf_chttr_apps__C5r_for_Android_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.565
+!MESSAGE  WARN [2017-02-17 12:43:23,564] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'applicationManifests/Chatter_for_Android', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.567
+!MESSAGE  WARN [2017-02-17 12:43:23,566] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_BlackBerry_oauth/ConnectivityDevConfigs/C5r_for_BlackBerry_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.569
+!MESSAGE  WARN [2017-02-17 12:43:23,568] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_BlackBerry_oauth/modules/sf_chttr_apps__C5r_for_BlackBerry_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.572
+!MESSAGE  WARN [2017-02-17 12:43:23,571] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'applicationManifests/Chatter_for_BlackBerry', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.574
+!MESSAGE  WARN [2017-02-17 12:43:23,573] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_iOS_oauth_apple/ApplePushApplicationSetup/C5r_for_iOS_oauth_appleApplePushApplicationSetup.ApplePushApplicationSetup', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.577
+!MESSAGE  WARN [2017-02-17 12:43:23,575] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_iOS_oauth_apple/modules/sf_chttr_apps__C5r_for_iOS_oauth_apple', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.579
+!MESSAGE  WARN [2017-02-17 12:43:23,578] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_iOS_oauth/ConnectivityDevConfigs/C5r_for_iOS_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.581
+!MESSAGE  WARN [2017-02-17 12:43:23,581] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_iOS_oauth/modules/sf_chttr_apps__C5r_for_iOS_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.585
+!MESSAGE  WARN [2017-02-17 12:43:23,583] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'applicationManifests/Chatter_for_iOS', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.587
+!MESSAGE  WARN [2017-02-17 12:43:23,586] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/S91_for_Windows_oauth/ConnectivityDevConfigs/S91_for_Windows_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.590
+!MESSAGE  WARN [2017-02-17 12:43:23,589] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/S91_for_Windows_oauth/modules/sf_chttr_apps__S91_for_Windows_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.593
+!MESSAGE  WARN [2017-02-17 12:43:23,592] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'applicationManifests/Salesforce1_for_Windows', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.597
+!MESSAGE  WARN [2017-02-17 12:43:23,595] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/S9A_oauth/ConnectivityDevConfigs/S9A_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.600
+!MESSAGE  WARN [2017-02-17 12:43:23,598] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/S9A_oauth/modules/sf_chttr_apps__S9A_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.602
+!MESSAGE  WARN [2017-02-17 12:43:23,601] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'applicationManifests/SalesforceA', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.605
+!MESSAGE  WARN [2017-02-17 12:43:23,604] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/S8e_C8x_oauth/ConnectivityDevConfigs/S8e_C8x_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.607
+!MESSAGE  WARN [2017-02-17 12:43:23,606] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/S8e_C8x_oauth/modules/sf_chttr_apps__S8e_C8x_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:23.609
+!MESSAGE  WARN [2017-02-17 12:43:23,608] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'applicationManifests/Salesforce_Chatterbox', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 4 0 2017-02-17 12:43:23.611
+!MESSAGE ERROR [2017-02-17 12:43:23,610] (ProjectPackageList.java:generateComponents:482) - Filepath-zip mapping is null or empty for package 'Salesforce1 and Chatter Apps' [0A328000000MrZGCA0] - skipping component generation
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.078
+!MESSAGE  WARN [2017-02-17 12:43:24,077] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_iOS_oauth_notif/modules/sf_chttr_apps__C5r_for_iOS_oauth_notif', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.081
+!MESSAGE  WARN [2017-02-17 12:43:24,079] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/C5r_for_Android_oauth_notif/modules/sf_chttr_apps__C5r_for_Android_oauth_notif', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.084
+!MESSAGE  WARN [2017-02-17 12:43:24,083] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/S10Q_oauth/ConnectivityDevConfigs/S10Q_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.085
+!MESSAGE  WARN [2017-02-17 12:43:24,085] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'modules/S10Q_oauth/modules/relateiq__S10Q_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.087
+!MESSAGE  WARN [2017-02-17 12:43:24,086] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'applicationManifests/SalesforceIQ', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.092
+!MESSAGE  WARN [2017-02-17 12:43:24,091] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/Ui/Ui.app-meta.xml', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.095
+!MESSAGE  WARN [2017-02-17 12:43:24,094] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/mobilepagebuilder/mobilepagebuilder.app-meta.xml', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.097
+!MESSAGE  WARN [2017-02-17 12:43:24,096] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/page/page.cmp', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.099
+!MESSAGE  WARN [2017-02-17 12:43:24,098] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/page/page.cmp-meta.xml', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.101
+!MESSAGE  WARN [2017-02-17 12:43:24,100] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/page/page.css', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.103
+!MESSAGE  WARN [2017-02-17 12:43:24,102] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/page/page.design', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.105
+!MESSAGE  WARN [2017-02-17 12:43:24,104] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/page/page.svg', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.107
+!MESSAGE  WARN [2017-02-17 12:43:24,107] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/page/pageController.js', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.109
+!MESSAGE  WARN [2017-02-17 12:43:24,108] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/page/pageHelper.js', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.113
+!MESSAGE  WARN [2017-02-17 12:43:24,110] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/page/pageRenderer.js', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.125
+!MESSAGE  WARN [2017-02-17 12:43:24,115] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/pagebuilder/pagebuilder.app-meta.xml', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.127
+!MESSAGE  WARN [2017-02-17 12:43:24,126] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/scripts/scripts.cmp', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.129
+!MESSAGE  WARN [2017-02-17 12:43:24,128] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/scripts/scripts.cmp-meta.xml', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.130
+!MESSAGE  WARN [2017-02-17 12:43:24,130] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/skuidtemplate/skuidtemplate.cmp', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:24.133
+!MESSAGE  WARN [2017-02-17 12:43:24,131] (ComponentFactory.java:getComponentByFilePath:622) - No id found for filepath 'aura/skuidtemplate/skuidtemplate.cmp-meta.xml', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 12:43:42.052
+!MESSAGE  WARN [2017-02-17 12:43:42,046] (ProjectPackageList.java:saveResources:1159) - Component list in project package 'Salesforce1 and Chatter Apps' is empty.  No resources to save.
+
+
+!ENTRY org.eclipse.jface 4 0 2017-02-17 12:45:56.865
+!MESSAGE /icons/appExDevIco16.png
+!STACK 0
+java.io.FileNotFoundException: /icons/appExDevIco16.png
+	at org.eclipse.osgi.storage.url.bundleentry.Handler.findBundleEntry(Handler.java:37)
+	at org.eclipse.osgi.storage.url.BundleResourceHandler.openConnection(BundleResourceHandler.java:169)
+	at java.net.URL.openConnection(Unknown Source)
+	at org.eclipse.core.internal.boot.PlatformURLConnection.connect(PlatformURLConnection.java:112)
+	at org.eclipse.core.internal.boot.PlatformURLConnection.getURLAsLocal(PlatformURLConnection.java:244)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.toFileURL(PlatformURLConverter.java:37)
+	at org.eclipse.core.runtime.FileLocator.toFileURL(FileLocator.java:207)
+	at org.eclipse.jface.resource.URLImageDescriptor.getFilePath(URLImageDescriptor.java:219)
+	at org.eclipse.jface.resource.URLImageDescriptor.createImage(URLImageDescriptor.java:283)
+	at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:224)
+	at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:202)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.getImageFromURI(SWTPartRenderer.java:225)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.getImage(SWTPartRenderer.java:236)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.updateTab(StackRenderer.java:566)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$1.handleEvent(StackRenderer.java:376)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler$1.run(UIEventHandler.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:186)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:145)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4761)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:211)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:36)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:135)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:78)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:39)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:85)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:59)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:374)
+	at org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl.setIconURI(PartImpl.java:497)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor.createPartControl(CompatibilityEditor.java:111)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:341)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:898)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:879)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.inject(InjectorImpl.java:121)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:345)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:264)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:162)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:104)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:73)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:55)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:129)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:971)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:640)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl$1.handleEvent(PartServiceImpl.java:99)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler$1.run(UIEventHandler.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:186)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:145)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4761)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:211)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:36)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:135)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:78)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:39)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:85)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:59)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:374)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:171)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.showElementInWindow(ModelServiceImpl.java:494)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.bringToTop(ModelServiceImpl.java:458)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.delegateBringToTop(PartServiceImpl.java:724)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.bringToTop(PartServiceImpl.java:396)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1166)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:3234)
+	at org.eclipse.ui.internal.WorkbenchPage.access$25(WorkbenchPage.java:3149)
+	at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:3131)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3126)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3090)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3080)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:541)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:500)
+	at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor(EditorUtility.java:360)
+	at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor(EditorUtility.java:167)
+	at org.eclipse.jdt.ui.actions.OpenAction.run(OpenAction.java:268)
+	at org.eclipse.jdt.ui.actions.OpenAction.run(OpenAction.java:233)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.dispatchRun(SelectionDispatchAction.java:275)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.run(SelectionDispatchAction.java:251)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerActionGroup.handleOpen(PackageExplorerActionGroup.java:376)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart$4.open(PackageExplorerPart.java:538)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:854)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:50)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:173)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:851)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1168)
+	at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:1275)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:278)
+	at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:272)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:313)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4180)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3769)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:07.060
+!MESSAGE Connection to http://eclipse.poweredbypulse.com/downloads/partners/force.com/p2.index failed on eclipse.poweredbypulse.com. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: eclipse.poweredbypulse.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2017-02-17 13:07:07.406
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unknown Host: http://eclipse.poweredbypulse.com/downloads/partners/force.com/content.xml
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:243)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at sun.reflect.GeneratedMethodAccessor146.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:116)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:344)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:146)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:394)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.net.UnknownHostException: eclipse.poweredbypulse.com
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:304)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	... 1 more
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1006 2017-02-17 13:07:07.408
+!MESSAGE Unknown Host: http://eclipse.poweredbypulse.com/downloads/partners/force.com/content.xml
+!STACK 0
+java.net.UnknownHostException: eclipse.poweredbypulse.com
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:304)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:10.088
+!MESSAGE Connection to http://http/media.developerforce.com/force-ide/eclipse42/p2.index failed on http. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: http
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2017-02-17 13:07:10.378
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unknown Host: http://http/media.developerforce.com/force-ide/eclipse42/content.xml
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:243)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at sun.reflect.GeneratedMethodAccessor146.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:116)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:344)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:146)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:394)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.net.UnknownHostException: http
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:304)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	... 1 more
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1006 2017-02-17 13:07:10.379
+!MESSAGE Unknown Host: http://http/media.developerforce.com/force-ide/eclipse42/content.xml
+!STACK 0
+java.net.UnknownHostException: http
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:304)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:18.796
+!MESSAGE Connection to http://http/media.developerforce.com/force-ide/eclipse42/p2.index failed on http. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: http
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:28.225
+!MESSAGE Connection to http://eclipse.poweredbypulse.com/downloads/partners/force.com/p2.index failed on eclipse.poweredbypulse.com. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: eclipse.poweredbypulse.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:31.613
+!MESSAGE Connection to http://http/media.developerforce.com/force-ide/eclipse42/p2.index failed on http. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: http
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:32.135
+!MESSAGE Connection to http://eclipse.poweredbypulse.com/downloads/partners/force.com/p2.index failed on eclipse.poweredbypulse.com. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: eclipse.poweredbypulse.com
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:32.785
+!MESSAGE Connection to http://http/media.developerforce.com/force-ide/eclipse42/p2.index failed on http. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: http
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:33.100
+!MESSAGE Connection to http://eclipse.poweredbypulse.com/downloads/partners/force.com/p2.index failed on eclipse.poweredbypulse.com. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: eclipse.poweredbypulse.com
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:36.955
+!MESSAGE Connection to http://http/media.developerforce.com/force-ide/eclipse42/p2.index failed on http. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: http
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:37.276
+!MESSAGE Connection to http://eclipse.poweredbypulse.com/downloads/partners/force.com/p2.index failed on eclipse.poweredbypulse.com. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: eclipse.poweredbypulse.com
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:37.753
+!MESSAGE Connection to http://http/media.developerforce.com/force-ide/eclipse42/p2.index failed on http. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: http
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-02-17 13:07:38.065
+!MESSAGE Connection to http://eclipse.poweredbypulse.com/downloads/partners/force.com/p2.index failed on eclipse.poweredbypulse.com. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: eclipse.poweredbypulse.com
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 14:33:07.584
+!MESSAGE  WARN [2017-02-17 14:33:07,582] (ConnectionFactory.java:clearCache:220) - Clearing the following cached connections
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 14:33:07.600
+!MESSAGE  WARN [2017-02-17 14:33:07,599] (DescribeObjectRegistry.java:clearCache:664) - Clearing cached describes
+
+
+!ENTRY com.salesforce.ide.core 2 0 2017-02-17 14:33:07.602
+!MESSAGE  WARN [2017-02-17 14:33:07,601] (MetadataFactory.java:clearCache:129) - Clearing the following cached metadata stubs
+

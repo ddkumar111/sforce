@@ -1,0 +1,756 @@
+<!--
+/**         
+  * Description     :   This is the component containing top navs content for the ASDHealthcare App
+  *      
+  * Created By      :   Bhavi Sharma
+  *
+  * Created Date    :   08/24/2015
+  *
+  * Version         :   V_1.0 Created
+  *
+  **/
+-->
+<apex:component >
+	<style>
+li.menu-item:hover , li.menu-item:focus , li.menu-item:visited {
+	border-top: 3px solid #b2d234;
+}
+
+li.link:hover {
+	border-top: 3px solid #34b6d0;
+}
+
+.navbar-nav>li>a:hover, .navbar-nav>li>a:focus, .nav .open>a, .nav .open>a:focus,
+	.nav .open>a:hover, .navbar-nav>li>.dropdown-menu {
+	background: transparent !important;
+}
+
+#top-nav {
+	font-size: 14px;
+}
+
+.container-fluid {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.sub-menu div {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+
+#tabs-1 .sub-menu {
+	text-align: center;
+}
+
+.sub-menu .sub-menu-col {
+	width: 185px;
+}
+
+.sub-menu .sub-menu-col.col3 {
+	margin-left: 120px;
+	margin-right: 120px;
+}
+
+.sub-menu div strong {
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+.sub-menu div ul {
+	margin-left: -6px;
+}
+
+.sub-menu div ul li {
+	list-style-type: none;
+	text-decoration: none;
+	margin-left: -34px;
+}
+
+#tabs a:hover {
+	color: #bdb7b7;
+	text-decoration: none;
+}
+
+#tabs {
+	padding-left: 15px;
+	background: #007da3;
+	
+	text-align: left;
+	color: #fff;
+}
+
+#tabs a {
+	color: #fff;
+}
+
+#tabs .close {
+	cursor: pointer;
+	width: 100%;
+	text-align: right;
+	padding-right: 0;
+	color: #fff;
+	-ms-opacity: 1;
+	opacity: 1;
+	font-weight: normal;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
+#tabs button {
+	background: #7d7d7d;
+	height: 40px;
+	font-size: 14pt;
+	border: none;
+	color: #000;
+	outline: none;
+}
+
+#tabs-2 .login-tab-col button {
+	background: #83bb26;
+	height: 23px;
+	font-size: 12pt;
+	border: none;
+	color: #fff;
+	outline: none;
+	width: 110px;
+}
+
+.tab-table {
+	display: table;
+	width: 100%;
+	text-align: -webkit-center;
+}
+
+.login-tab .login-tab-col {
+	display: table-cell;
+	text-align: left;
+	vertical-align: top;
+}
+
+.login-tab-col.col1 {
+	padding-right: 10px;
+}
+
+.login-tab-col.col2 {
+	padding-left: 10px;
+}
+
+.login-tab-col.col2 .create-text {
+	margin-top: -20px;
+    margin-right: 76px;
+    text-align: right;
+    padding-left: 15px;
+}
+
+#tabs input[type=text], #tabs input[type=password] {
+	background: #bababa;
+	width: 400px;
+	height: 40px;
+	font-size: 14pt;
+	border: none;
+	padding-left: 10px;
+	-webkit-border-radius: 0;
+}
+
+#tabs-2 .login-tab-col .forgot {
+	padding-top: 10px;
+}
+
+#tabs .login-tab a {
+	color: #000;
+	font-weight: bold;
+}
+
+#tabs-2 .login-tab-col .button {
+	text-align: right;
+}
+
+#tabs-4 .search-col {
+	display: table-cell;
+	vertical-align: top;
+	text-align: left;
+}
+
+#tabs-4 .search-col.col1 {
+	width: 600px;
+}
+
+#tabs-4 .search-col div {
+	padding-bottom: 15px;
+}
+
+#tabs-4 .searchbar div {
+	display: table-cell;
+	vertical-align: top;
+}
+
+#tabs button {
+	background: #7d7d7d;
+	height: 40px;
+	font-size: 14pt;
+	border: none;
+	color: #000;
+	outline: none;
+}
+
+#tabs-4 .searchbar button, #tabs-4 .searchbar input[type=submit] {
+	width: 42px;
+	margin-left: -4px;
+}
+
+#tabs-4 .bottom-pics div {
+	display: inline-block;
+}
+
+#tabs-4 .bottom-pics .pic1 {
+	padding-right: 5px;
+}
+
+#tabs-4 .bottom-pics .pic2 {
+	padding-left: 5px;
+}
+#header-menu {
+    background: #003893;
+    z-index: 210;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    
+}
+div#header-menu, div#header-fixed {
+    border-bottom: 1px solid #fff;
+    text-align: center;
+}
+#header-menu ul, #header-fixed ul {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    padding-left: 0;
+}
+#header-menu ul li , #header-fixed ul li{
+    display: inline;
+    padding: 5px 30px 5px 30px!important;
+    font-size: 16px;
+}
+.navbar-collapse {
+    padding-right: 0px;
+    padding-left: 0px !important;
+}
+.headerFixedheight {
+	min-height: 40px !important;
+
+}
+div#header-menu ul li a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+a:focus {
+	text-decoration: none;
+}
+div#header-menu ul li a {
+    color: #fff;
+}
+.header-menu ul li.is-active{border-top:3px solid #b2d234;}
+
+.sub-menu ul li {
+    line-height: 20px;
+}
+
+@media (max-width: 768px) {
+	.navbar-toggle {
+		display: none !important;
+	}
+	
+	#showLeft {
+	    display: block;;
+		position: absolute;
+	    left: 10px;
+	    top: 17px;
+	    opacity: .7;
+	    cursor: pointer;
+	    
+	}
+	#showLeft:hover {
+		opacity: 1;
+	}
+	
+	#header-menu ul li, #header-fixed ul li {
+	    padding: 14px 30px 19px 30px!important;
+	    width: 100%;
+	    float: left;
+	    border-top: 1px solid rgba(255,255,255,.1);
+	}
+	
+	div#header-menu ul li a {
+		color: #ccc;
+	}
+	
+	#header-menu {
+		background: #333;
+	    display: none;
+	    
+	}
+	
+	#menuBar {
+		display: none;
+	}
+	#top-nav {
+		width: 100%;
+	}
+	#FirstMenu {
+		margin-top: 26%;
+	}
+	li.menu-item:hover , li.link:hover {
+		border: none;
+	}
+	.closeBtn {
+		opacity: .7;
+		position: absolute;
+	    top: 30px;
+	    left: 20px;
+	    width: 1.925em;
+	    cursor: pointer;
+	    
+	}
+	
+}
+
+@media (min-width: 769px) {
+	
+	#showLeft {
+		display: none;
+	}
+	.closeBtn {
+		display: none;
+	}
+}
+
+</style>
+<body>
+	<img  id="showLeft" src="https://www.asdhealthcare.com/AsdHealthcare/media/Structure/img/Masterpage/Header/nav-icon-button.jpg" />
+	<div class="mobi-nav clearfix">
+		<div class="container" id="menuBar">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span>
+			</button>
+			<h2>Menu</h2>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="tabs-container">
+		<div id="tabs" class="navbar-collapse collapse">
+			
+			
+			<!-- Menu -->
+			
+			<div id="tabs-1" class="menu-tab"> 
+				<div class="close">
+					<img
+						 src="{!URLFOR($Resource.AsdHealthResourse,'image/close-btn.png')}"
+						alt="Close Menu Button" />
+				</div>
+				<div class="sub-menu">
+
+					<!--column 2 -->
+					<div>
+						<!--Top-->
+						<div>
+
+							<div class="sub-menu-col col2">
+								<strong>Products</strong>
+
+								<ul id="CMSListMenuProduct" class="MenuCMSListMenuUL">
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/products/oncology" target="_blank">Oncology</a>
+									</li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/products/specialty-drugs" target="_blank">Specialty
+											Drugs</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/products/influenza-vaccines" target="_blank">Influenza Vaccines</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/products/blood-derivatives" target="_blank">Blood
+											Derivatives</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/products/nephrology-dialysis" target="_blank">Nephrology/Dialysis</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/products/contrast-media" target="_blank">Contrast
+											Media</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/resources/insideout-magazine" target="_blank">Product Catalog</a></li>
+									<li class="MenuCMSListMenuLI">  
+								<a class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/requestareturn" target="_blank">Request a Return</a>
+							</li> 
+
+								</ul>
+
+							</div>
+
+							<div class="sub-menu-col col3">
+
+								<strong>Business Innovation </strong>
+
+								<ul id="CMSListMenuBusiInnov" class="MenuCMSListMenuUL">
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/business-innovation/hospital-and-htc-solution" target="_blank">Hospital
+											and HTC Solution</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/business-innovation/in-home-patient-solution" target="_blank">In-Home
+											Patient Solution</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/business-innovation/private-practice-solution" target="_blank">Private
+											Practice Solution</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/cubixxct" target="_blank">Manufacturer
+											Solution</a></li>
+
+								</ul>
+							</div>
+
+
+							<div class="sub-menu-col col4">
+								<strong>Resources </strong>
+
+								<ul id="CMSListMenuResources" class="MenuCMSListMenuUL">
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/insideout" target="_blank">InsideOut
+											Magazine</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/resources/media-library" target="_blank">Media
+											Library</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/findyourrep" target="_blank">Find Your
+											Sales Rep</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/reimbursementcalculator" target="_blank">Reimbursement
+											Calculator</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/cubixxct" target="_blank">Cubixx ROI
+											Calculator</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/news" target="_blank">News</a></li>
+
+								</ul>
+							
+						</div>
+						</div>
+
+						<hr />
+
+						<!--bottom-->
+						<div>
+
+							<div class="sub-menu-col col2">
+								<strong>Customer Support </strong>
+
+								<ul id="CMSListMenuCustomerSupport" class="MenuCMSListMenuUL">
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/faq" target="_blank">Web Help &amp; FAQ</a>
+									</li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://order.asdhealthcare.com/app/Pages/NewUser.aspx" target="_blank">Create
+											Web Log In</a></li>
+									<li class="MenuCMSListMenuLI">
+								<a class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/customer-support/request-a-return" target="_blank">Request a Return</a>
+							</li> 
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/customer-support/contact-us" target="_blank">Contact Us</a></li>
+
+								</ul>
+
+							</div>
+
+							<div class="sub-menu-col col3">
+
+								<strong>About Us</strong>
+
+								<ul id="CMSListMenuAboutUs" class="MenuCMSListMenuUL">
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/about-us/about-us" target="_blank">About
+											Us</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/about-us/your-trusted-partner" target="_blank">Your Trusted Partner</a>
+									</li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/about-us/distribution-services" target="_blank">Distribution
+											Services</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/about-us/executive-leadership-bios" target="_blank">Executive
+											Leadership Bios</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/about-us/advocacy" target="_blank">Advocacy</a>
+									</li>
+
+								</ul>
+
+							</div>
+
+							<div class="sub-menu-col col4">
+
+								<strong>Corporate Network</strong>
+
+								<ul id="CMSListMenuCorporateNetwork" class="MenuCMSListMenuUL">
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/corporate-network/vision,-mission,-values" target="_blank">Vision,
+											Mission, Values</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink"
+										href="https://www.asdhealthcare.com/corporate-network/our-network" target="_blank">Our Network</a></li>
+									<li class="MenuCMSListMenuLI"><a
+										class="MenuCMSListMenuLink" href="https://www.asdhealthcare.com/corporate-network/careers" target="_blank">Careers</a>
+									</li>
+
+								</ul>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+ 
+
+			<!-- Login / MyAccount -->
+			<div class="menu-tab" id="tabs-2">
+				<div id="p_lt_loginControl_pnlLogin" class="login-tab">
+
+					<div>
+						<div class="close">
+							<img
+								src="{!URLFOR($Resource.AsdHealthResourse,'image/close-btn.png')}"
+								alt="Close Menu Button" />
+						</div>
+						<div class="tab-table">
+							<div class="tab-container">
+								<div class="tab-content">
+									<div class="login-form login-tab-col col1">
+										<div class="title">Website Log In</div>
+										<br /> <br /> <label for="txtusername">User Name</label> <br />
+										<input type="text" id="txtusername" data-validate="true"
+											data-display-name="Username" data-required="true" /> <br />
+										<br /> <label for="txtpassword">Password</label> <br /> <input
+											type="password" id="txtpassword" data-validate="true"
+											data-display-name="Password" data-required="true" /> <br />
+										<br />
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="checkbox" id="chkrememberme" /> 
+												<label	for="chkrememberme">Remember user name</label>
+											</div>
+											<div class="col-sm-6 button">
+												<button id="btnlogin">Log In</button>
+											</div>
+										</div>
+
+										<div class="forgot">
+											Forgot <a
+												href="https://order.asdhealthcare.com/app/Pages/LoginAssistance.aspx?form=userId"
+												id="p_lt_loginControl_ancForgotUser">user name</a> or <a
+												href="https://order.asdhealthcare.com/app/Pages/LoginAssistance.aspx?form=password"
+												id="p_lt_loginControl_ancForgotPass">password</a>?
+										</div>
+									</div>
+									<div class="login-tab-col col2">
+										<div>
+											<img  style="width: 450px;"
+												src="{!URLFOR($Resource.AsdHealthResourse,'image/login-tab-pic.png')}"
+												alt="Close Menu Button" />
+										</div>
+										<div class="create-text">
+											Create a website log in <a
+												href="https://order.asdhealthcare.com/app/Pages/NewUser.aspx"
+												id="p_lt_loginControl_ancNewUser">here</a>. <br /> <br />
+											<p style="text-align: left; max-width: 410px;">
+												If you are not already an ASD Healthcare customer, please
+												call <b class="phone">1.800.746.6273</b> to open an account
+												with us.
+											</p>
+										</div>
+									</div>
+									<br />
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+			<!-- blink -->
+			<div id="tabs-3" class="blink-tab"></div>
+
+			<!-- Search -->
+			<div id="tabs-4" class="menu-tab">
+				<div class="close"><img src="{!URLFOR($Resource.AsdHealthResourse,'image/close-btn.png')}" alt="Close Menu Button" /> </div>
+				<div class="tab-table">
+					<div class="tab-container">
+						<div class="tab-content">
+							<div class="search-col col1">
+								<div>
+									<strong>Search</strong>
+								</div>
+								<div>
+									Use our search feature to find an Item, description, <br />
+									manufacturer, NDC, UPC, product code or an other item.
+								</div>
+								<div class="searchbar">
+									<div>
+										<input type="text" id="txtsearchkeyword" data-validate="true"
+											data-display-name="Keyword" data-required="true" />
+									</div>
+									<div>
+										<button id="btnSearch">
+											<span class="glyphicon glyphicon-search"></span>
+										</button>
+									</div>
+								</div>
+								<div class="bottom-pics">
+									<div class="pic1">
+										<img
+											src="{!URLFOR($Resource.AsdHealthResourse,'image/search-pic1.png')}"
+											alt="Close Menu Button" />
+									</div>
+									<div class="pic2">
+										<img
+											src="{!URLFOR($Resource.AsdHealthResourse,'image/search-pic2.png')}"
+											alt="Close Menu Button" />
+									</div>
+								</div>
+							</div>
+							<div class="search-col col2">
+								<img
+									src="{!URLFOR($Resource.AsdHealthResourse,'image/search-pic3.png')}"
+									alt="Syringe Product Image" />
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+			
+			</div>
+			<div id="header-menu" class="header-menu">
+				<ul>
+				<img class="closeBtn"  src="https://www.asdhealthcare.com/AsdHealthcare/media/Structure/img/Masterpage/Header/close-btn.svg" />
+				<li  class="menu-item" id="FirstMenu"><a id="menuItem" href="#">
+				<img style="padding-right: 5px;" src="https://www.asdhealthcare.com/AsdHealthcare/media/Structure/img/3-bar-white.png" alt="Close Menu Button" />
+						Menu</a></li>
+				<li  class="menu-item"><a id="loginItem" href="#">Log In</a></li>
+				<li  class="menu-item"><a id="searchItem" href="#">Search</a></li>
+				<li class="link"><a href="https://www.asdhealthcare.com/home">Home</a></li>
+				<li style="border-bottom: 1px solid rgba(255,255,255,.1);" class="link"><a
+					href="https://www.asdhealthcare.com/contact-us">Contact Us</a></li>
+			</ul>
+			
+			</div>
+			
+			
+
+		</div>
+	</div>
+	
+	<script>
+		$(document).ready(function() {
+		
+		//event for tthe hide sub-mennu at the page load
+		$(".menu-tab").hide();
+		
+            
+		$("#menuItem").on("click", function () {
+			$("#tabs-1").slideDown("slow");
+			$(this).siblings().css("display", "none");
+ 
+			  
+		}); 
+		
+		$("#tabs").on("click", ".close", function () {
+            $("#tabs-1").slideUp("slow"); 
+        });
+		
+		$("#loginItem").on("click", function () {
+			$("#tabs-2").slideDown("slow"); 
+		
+		});
+		
+		$("#tabs").on("click", ".close", function () {
+            $("#tabs-2").slideUp("slow"); 
+        });
+        
+        $("#searchItem").on("click", function () {
+			$("#tabs-4").slideDown("slow"); 
+		
+		});
+		
+		$("#tabs").on("click", ".close", function () {
+            $("#tabs-4").slideUp("slow"); 
+        });
+		
+		
+		
+		//event for when user clicks on search button
+        $('.searchbar #btnSearch').click(function () {
+        	
+        	alert('Inside the search box');
+        	
+        	redirecttoSearch();
+        });
+        
+        var redirecttoSearch = function () {
+	        //go to search
+	        var keyword = $(".searchbar #txtsearchkeyword").val();
+	        
+	        alert(keyword);
+	        //var result = Absg.Asd.Kentico.Validation.Validate($(".searchbar"));
+	
+			//alert(result);
+	
+	        //if (result.valid) {
+	            //window.location.replace(
+	            
+	           var urlwindow = window.location.protocol + "//" + window.location.hostname + '/search?searchtext=' + keyword + '&searchmode=anywordorsynonyms';
+	        	
+	        	alert(urlwindow);
+	        	
+	        	//window.location.href(www.gmail.com);
+	        	//var location = window.location.href;
+	        	//alert(location);
+	        //} else {
+	        
+	          //  Absg.Asd.Kentico.Messaging.SetError(result.message);
+	        //}
+    	};
+        
+		
+				
+		});
+		
+		
+		
+	</script>
+	<script>
+		
+		
+		
+	</script>
+	
+	</body>
+</apex:component>

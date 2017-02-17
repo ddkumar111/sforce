@@ -1,0 +1,29 @@
+<apex:page controller="Update_StageData" sidebar="false">
+    
+    <!-- Start of the page-->
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Update"  action="{!updateOpportunity}" reRender="de" />
+                <apex:outputpanel id="de">
+                    <script>
+                    if('{!isUpdate}' == 'true')
+                        {
+                           var oppId = '{!opportunity.id}';
+                           window.opener.location.href = '/' + oppId ;
+                           <!-- window.opener.location.href = "http://www.facebook.com/login" ; -->
+                           window.close(); 
+                           
+                         }
+                    </script>    
+                </apex:outputpanel>
+                <apex:commandButton value="Close" onClick="window.top.close();" />
+            </apex:pageBlockButtons>
+    
+            <apex:pageBlockSection title="Update Stage">
+                <apex:inputField value="{!opportunity.StageName}" />
+               
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

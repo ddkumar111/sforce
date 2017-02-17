@@ -1,0 +1,54 @@
+<apex:page >
+  <apex:pageBlock >
+      
+      <a id="liveChat" href="javascript:void(0)" onclick="onPopUp();"> Live Chat </a>
+  </apex:pageBlock>
+  
+  <a id="liveagent_button_online_573280000008QtZ" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573280000008QtZ')">
+    <!-- Online Chat Content -->
+    Online Chat:-->
+    </a>
+    
+    <div id="liveagent_button_offline_573280000008QtZ" style="display: none;">
+    <!-- Offline Chat Content -->
+    Offline Chat:-->
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    
+    <script>
+        
+        $("#liveagent_button_offline_573280000008QtZ").css("display", "none");
+            
+            function onPopUp() {
+            
+            alert('deepak');
+            var MyDiv1 = document.getElementById('liveagent_button_offline_573280000008QtZ').innerHTML;
+            
+            alert(MyDiv1); 
+                if(MyDiv1 != '') {
+                     
+                    $("#liveagent_button_offline_573280000008QtZ").css({"background-color": "yellow", "display": "block"});
+                } 
+            }
+       
+    </script>
+    
+    
+    <script type="text/javascript">
+    
+    
+    if (!window._laq) { window._laq = []; }
+    window._laq.push(function(){
+    liveagent.showWhenOnline('573280000008QtZ', document.getElementById('liveagent_button_online_573280000008QtZ'));
+    liveagent.showWhenOffline('573280000008QtZ', document.getElementById('liveagent_button_offline_573280000008QtZ'));
+    });
+    </script>
+
+
+
+<script type='text/javascript' src='https://c.la10.salesforceliveagent.com/content/g/js/36.0/deployment.js'></script>
+<script type='text/javascript'>
+liveagent.init('https://d.la10.salesforceliveagent.com/chat', '572280000004Eaq', '00D28000000XFWD');
+</script>
+</apex:page>

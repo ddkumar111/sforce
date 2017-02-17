@@ -1,0 +1,6 @@
+<apex:page standardController="Account">
+It is worth:
+<apex:outputText value="{0, number, 000,000.00}">
+       <apex:param value="{!Account.AnnualRevenue}" />
+ </apex:outputText>
+</apex:page>

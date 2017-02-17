@@ -1,0 +1,54 @@
+<apex:page >
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+ </script>  
+   <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+ 
+ <script>
+      
+      angular
+    .module('demoOfSelect', ['ngMaterial'])
+    .controller('SelectOptGroupController', function($scope) {
+    
+       $scope.SobjectData =[
+                                {check:false,Label:'Opportunity Stage',API Name:'OpportunityStage',isCustom:'false'},
+                                {check:false,Label:'Account',API Name:'Account',isCustom:'false'},
+                                {check:false,Label:'Contact',API Name:'Contact',isCustom:'false'},
+                                {check:false,Label:'Lead',API Name:'Lead',isCustom:'false'}
+                            ];
+        });
+ </script>
+ 
+    
+   
+  <div ng-controller="SelectOptGroupController"  ng-app="demoOfSelect" ng-cloak="">
+ 
+ <div class="container">
+  <h2>SObjects</h2>    
+  <div class="table-responsive">          
+   <table class="table">
+    <thead>
+     <tr>
+      <th></th>
+      <th>Label</th>
+      <th>API Name</th>
+      <th>isCustom</th>
+             </tr>
+    </thead>
+    <tbody>
+             <tr ng-repeat="sobj in SobjectData">
+              <td>
+               <input type="checkbox" value="{{sobj.check}}"/></td>
+            <td>{{sobj.Label}}</td>
+            <td>{{sobj.API Name}}</td>
+            <td>{{sobj.isCustom}}</td>
+     </tr>                 
+    </tbody>
+   </table>
+  </div>
+ </div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+ </div>
+ 
+</apex:page>

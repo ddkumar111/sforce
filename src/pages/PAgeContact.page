@@ -1,0 +1,21 @@
+<apex:page controller="loadingSpinnerCtrl">
+    <apex:form id="form">    
+        <apex:selectList id="selected_list" multiselect="true" value="{!dropdown1}" required="false" size="6">
+            <apex:selectOption itemvalue="1" itemLabel="First"/>
+            <apex:selectOption itemvalue="2" itemLabel="Second"/>
+            <apex:selectOption itemvalue="3" itemLabel="Third"/>
+            <apex:selectOption itemvalue="4" itemLabel="Fourth"/>
+            <apex:selectOption itemvalue="5" itemLabel="Fifth"/>
+            <apex:actionSupport event="onchange" reRender="dropdown2" action="{!spin}" status="status"/>
+        </apex:selectList>
+        <apex:selectList id="dropdown2"  multiselect="true" required="false" size="6">
+            <!--<apex:selectOption itemvalue="None" itemLabel="--None--"/> -->
+            <apex:selectOptions value="{!items}" />
+        </apex:selectList>
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div>Loading Please wait........</div>
+            </apex:facet>
+        </apex:actionStatus>               
+    </apex:form>
+</apex:page>

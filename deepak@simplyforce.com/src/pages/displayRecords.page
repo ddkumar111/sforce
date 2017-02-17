@@ -1,0 +1,4 @@
+<apex:page >
+
+<c:recordDisplay />
+</apex:page>

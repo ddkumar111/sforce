@@ -1,0 +1,43 @@
+<apex:page controller="Account_Contact"  sidebar="false"   >
+  <apex:form >
+  
+    
+    
+    <apex:pageBlock mode="Edit" >
+          
+          <font color="WHITE"><marquee direction="left" style="background:RED">SimplyForce Company  </marquee></font>
+          <font color="WHITE"><marquee direction="right" style="background:GREEN">Deepak    Kumawat  </marquee></font>
+                
+                
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save Accounts" action="{!doSaveAccount}" rendered="true" />
+                 <apex:commandButton value="Next to Contact_page" action="{!next}" rendered="false" />
+                
+                
+                <apex:commandButton value="Next to Contact_page" action="{!next}" rendered="false" />
+                
+            
+        </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account_Info">
+            <apex:inputField value="{!acc.Name}"/>
+             <apex:inputField value="{!acc.NumberOfEmployees}"/>
+             <apex:inputField value="{!acc.Fax}"/>
+         </apex:pageBlockSection>
+        
+        
+        
+         <apex:pageBlockSection title="Account_Display">
+              <apex:outputField value="{!acc.Name}"/>
+              <apex:outputField value="{!acc.NumberOfEmployees}"/>
+              <apex:outputField value="{!acc.Fax}"/>
+         </apex:pageBlockSection>
+          
+          
+            
+          
+      </apex:pageBlock>
+  
+  </apex:form>
+   <c:recordDisplay />
+
+</apex:page>

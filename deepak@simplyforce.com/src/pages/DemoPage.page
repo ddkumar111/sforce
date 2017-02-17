@@ -1,0 +1,195 @@
+<apex:page sidebar="false"   showHeader="false" standardStylesheets="false">
+    <head>
+        <c:ContactScreenHead />
+    </head>
+<apex:form >
+<body>
+        <!-- header of the page -->     
+        <div class="container-fluid">
+            <img src="{!URLFOR($Resource.ContactScreen,'img/headerBg.png')}" alt="" />
+            <div class="row">
+            
+                <div class="col-sm-4">
+                    <p class="Leftp1"> Contact Screen </p>
+                    <small>Marketing Contact Details for the Nationstar Listing. </small>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-6">
+                        <h4 style="margin-bottom: 0px;"> CATEGORY: </h4>
+                        <small><b>Marketing</b></small> 
+                    </div>
+                    <div class="col-sm-6">
+                        <h4 style="margin-bottom: 0px;"> SUB-CATEGORY: </h4>
+                        <small><b>Luxury Listen Plan</b></small>
+                    </div>    
+                </div>
+                <div id="buttonids"  class="col-sm-4" > 
+                    <ul class="H1Line">
+                        <li><a href="#"><input type="button" value="New Contact"/></a></li>
+                        <li><a href="#"><input type="button" value="Add"/> </a></li>
+                        <li><a href="#"><input type="button" value="Edit Contact"/></a></li>
+                        <li><a href="#"><input type="button" value="Delete Contact"/></a></li>
+                        <li><a href="#"><input type="button" value="Cancel"/> </a></li>
+                    </ul>   
+                    
+                    <ul class="H2Line"> 
+                        <li><a href="#"><input type="button" value="Documentation"/></a></li>
+                        <li><a href="#"><input type="button" value="Save"/></a></li>
+                        <li><a href="#"><input type="button" value="Save As"/></a></li>
+                    </ul>
+                </div>          
+            </div>
+          </div>  
+        
+<!-- Top heaad tag Imagess -->      
+            <div id="topHead">
+                <div>
+                    <img class="bggd1" src="{!URLFOR($Resource.ContactScreen,'img/background1.png')}" alt="" />
+                    <div  style="margin-top: -21px;">
+                        <ul class="nav nav-pills">
+                            <li ><a data-toggle="pill" href="#home">Contact Trigger</a></li>
+                            <li><a data-toggle="pill" href="#menu1">Addition Details</a></li>
+                            <li><a data-toggle="pill" href="#menu2">Task Details</a></li>
+                        </ul>
+                    </div>
+                </div><br />    
+            </div>
+    
+        <div style="margin-top: -19px;">
+            <img class="subulbg" src="{!URLFOR($Resource.ContactScreen,'img/subUL-bakcground.png')}" alt="" />
+            <div class="tab-content" style="margin-top: -18px; ">
+                <div id="home" class="tab-pane fade in active">
+                    <ul class="nav nav-pills">
+                        <li><a data-toggle="pill" href="#home">1</a></li>
+                        <li><a data-toggle="pill" href="#home">2</a></li>
+                        <li><a data-toggle="pill" href="#home">3</a></li>
+                    </ul>
+               </div>
+                
+                <div id="menu1" class="tab-pane fade">
+                    <ul class="nav nav-pills">
+                        <li><a data-toggle="pill" href="#menu1">A</a></li>
+                        <li><a data-toggle="pill" href="#menu1">B</a></li>
+                        <li><a data-toggle="pill" href="#menu1">C</a></li>
+                    </ul>
+                </div>
+                
+                <div id="menu2" class="tab-pane fade">
+                    <ul class="nav nav-pills">
+                        <li><a data-toggle="pill" href="#menu21">Task Set Up</a></li>
+                        <li><a data-toggle="pill" href="#menu22">Assinged</a>  </li>
+                        <li><a data-toggle="pill" href="#menu23">Email</a>  </li>
+                        <li><a data-toggle="pill" href="#menu24">Approval</a>  </li>
+                        <li><a data-toggle="pill" href="#menu25">Viewable</a>  </li>
+                        <li><a data-toggle="pill" href="#menu26">Editable</a>  </li>
+                        <li><a data-toggle="pill" href="#menu27">Recurring</a>  </li>
+                        <li><a data-toggle="pill" href="#menu28">Force Stop</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div><br/>
+    
+        <div style="margin-top: -22px;">
+            <img  src="{!URLFOR($Resource.ContactScreen,'img/subTabSelector-bg.png')}" alt="" />
+            <div  id="lowesttab" class="tab-content">
+                <div id="menu21" class="tab-pane fade">
+                    <a data-toggle="pill" href="#menu31">Task Set Up</a>
+                </div>
+            <div id="menu22" class="tab-pane fade">
+                <a data-toggle="pill" href="#menu32">Assinged</a>
+            </div>
+            <div id="menu23" class="tab-pane fade">
+                <a data-toggle="pill" href="#menu33">Email</a>
+            </div>
+            <div id="menu24" class="tab-pane fade">
+                <a data-toggle="pill" href="#menu34">Approval</a>
+            </div>
+            <div id="menu25" class="tab-pane fade">
+                <a data-toggle="pill" href="#menu35">Viewable</a>
+            </div>
+            <div id="menu26" class="tab-pane fade">
+                <a data-toggle="pill" href="#menu36">Editable</a>
+            </div>
+            <div id="menu27" class="tab-pane fade">
+                <a data-toggle="pill" href="#menu37">Recurring</a>
+            </div>
+            <div id="menu28" class="tab-pane fade">
+                <a data-toggle="pill" href="#menu38">Force Stop</a>
+            </div>
+        </div>  
+    </div><br/>
+
+<!-- Content of the Page -->    
+    
+    <div class="container">
+        
+        <div class="page-bg" >
+            <img  src="{!URLFOR($Resource.ContactScreen,'img/conntentBg.png')}" alt="" />   
+        </div>
+        
+        <div class="page-content">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3> Contact Information </h3>
+                    <div class="col-sm-6">
+                        Name<input type="text" placeholder="Enter the name"/><br />     
+                        Department<input type="text" placeholder="Enter the Department"/>
+                    </div>  
+                    <div class="col-sm-6">              
+                        Email <input type="text" placeholder="Enter the Email"/><br />
+                        Description<input type="text" placeholder="Enter the Regarding Descriptions"/>
+                    </div>  
+                </div>  
+                <div class="col-sm-6">
+                    <h3> Picklist Values </h3>
+                    <div id="list1"   class="col-sm-2">
+                        Industry:<select name="select1" id="select1" class="blueText">
+                        <option value="0" selected="selected"> -- None --</option>
+                        <option value="1">It</option>
+                        <option value="2">Banking</option>
+                        <option value="3">Arts</option>
+                        </select>
+                    </div>
+                    
+                    <div  id="list2" class="col-sm-2">
+                        Department:<select name="select2" id="select2">
+                        <option value="0" selected="selected"> -- None -- </option>
+                        <option value="1">C</option>
+                        <option value="1">C++</option>
+                        <option value="1">Java</option>
+                        <option value="2">Finance</option>
+                        <option value="2">Account</option>
+                        <option value="3">Political</option>
+                        <option value="3">Geography</option>
+                        </select>
+                    </div>
+                    
+                    <div id="list3"  class="col-sm-2">
+                        Role:<select name="select3" id="select3">
+                        <option value="0" selected="selected"> -- None -- </option>
+                        <option value="1">coder</option>
+                        <option value="1">desingner</option>
+                        <option value="2">C.A.</option>
+                        <option value="2">Company Secerrty</option>
+                        <option value="3">Leader</option>
+                        <option value="3">ScienestOfGeography</option>
+                        </select>
+                    </div>  
+                </div>
+            </div>
+        </div>    
+            <input type="button" value="Save" />
+            
+    </div>  
+    
+    <!-- All Java Scripts for the app includes here -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <apex:includeScript value="{!URLFOR($Resource.ContactScreen, 'js/jquery.min.js')}"/>
+    <!-- Include all compiled plugins (below), or include individual files as needed --> 
+    <apex:includeScript value="{!URLFOR($Resource.ContactScreen, 'bootstrap-3.3.5/js/bootstrap.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ContactScreen, 'js/contactScript.js')}"/>
+    
+        
+    </body>
+    </apex:form>
+</apex:page>

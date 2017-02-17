@@ -1,0 +1,20 @@
+<apex:page standardStylesheets="false" showHeader="false">
+
+<apex:includeLightning />
+
+
+<div id="lightning" />
+
+<script>
+    $Lightning.use("SFAuraCMP:AccountApp", function() {
+      $Lightning.createComponent("SFAuraCMP:AccountComp",
+      { label : "Press Me!" },
+      "lightning",
+      function(cmp) {
+       
+          alert('Rajkumar');
+      });
+    });
+</script>
+
+</apex:page>

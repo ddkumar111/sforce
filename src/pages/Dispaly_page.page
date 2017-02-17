@@ -1,0 +1,33 @@
+<apex:page sidebar="false">
+     <apex:form >
+     <html>
+        <body>
+                                
+        <h1>JavaScript Can Change Images</h1>
+        
+        <apex:image id="myImage" onclick="changeImage()" value="{!$Resource.bulboff}"  width="100" height="180"/>
+        console.log('@@@@@'  + va
+        <p>Click the light bulb to turn on/off the light.</p>
+        
+        <script>
+        function changeImage() {
+        var image = document.getElementById('myImage');
+        if (image.value.match("{!$Resource.bulbon}")) {
+        image.value = "{!$Resource.bulboff}";
+        } else {
+        image.value = "{!$Resource.bulbon}";
+        console.log('@@@@@@@@@' + image.value);
+        }
+        }
+        </script>
+                        
+                        </body>
+                        </html>
+                        
+  </apex:form>
+  
+  
+  
+  
+  
+</apex:page>

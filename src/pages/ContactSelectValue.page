@@ -1,0 +1,282 @@
+<apex:page sidebar="false"  controller="ContactResult" showHeader="false" standardStylesheets="false">
+    <head>
+        <c:ContactScreenHead />
+    
+    </head>
+<apex:form >
+<body>
+        <div class="container-fluid">
+        
+            <img src="{!URLFOR($Resource.ContactScreen,'img/headerBg.png')}" alt="" />
+            <div class="row">
+            
+                <div class="col-md-4">
+                    <p class="Leftp1"> Contact Screen </p>
+                    <small >Marketing Contact Details for the Nationstar Listing. </small>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <h4 style="margin-bottom: 0px;"> CATEGORY: </h4>
+                            <small><b>Marketing</b></small> 
+                        </div>
+                        <span style="height:50px;width:0;border:thick #CCCCCC 1px;"></span>
+                        <div class="col-md-6 col-sm-12">
+                            <h4 style="margin-bottom: 0px;"> SUB-CATEGORY: </h4>
+                            <small><b>Luxury Listen Plan</b></small>
+                        </div>
+                    </div>    
+                </div>
+                <div  class="col-md-4" > 
+                    <ul class="H1Line">
+                        <li><a href="#newconatact"><b><button type="button" class="btn btn-default btn-xs"><b>New Contact</b></button></b></a></li>
+                            
+                        <li><a href="#"><button type="button" class="btn btn-default btn-xs" onclick="window.open()"><b>Edit Contact</b></button></a></li>
+                    <li><a href="#"><button type="button" class="btn btn-default btn-xs" onclick="alert('Are U Sure');"><b>Delete </b></button></a></li>
+                        <li><a href="#"><button type="button" class="btn btn-default btn-xs"><b>Clone </b></button></a></li>
+                        <li><a href="#"><button type="button" class="btn btn-default btn-xs"><b>Cancel</b></button></a></li>
+                    </ul>   
+                    
+                    
+                    <ul class="H2Line">
+                        <li><a href="#"><button type="button"  class="btn btn-default btn-xs">Documentation</button></a></li>   
+                        <li><a href="#"><button type="button" class="btn btn-default btn-xs">Save</button></a></li>
+                        <li><a href="#"><button type="button" class="btn btn-default btn-xs">Save As</button></a></li>
+                        
+                    </ul>
+                    
+                </div>          
+            </div>
+        </div> 
+        
+<!-- Top heaad tag Imagess -->      
+            <div id="topHead">
+                
+                <div class="page-bg" >
+                    
+                    <img src="{!URLFOR($Resource.ContactScreen,'img/conntentBg.png')}" alt="" />
+                </div>
+                <div>
+                <img class="bggd1" src="{!URLFOR($Resource.ContactScreen,'img/background1.png')}" alt="" />
+            
+                    <div  style="margin-top: -21px;">
+                    <ul class="nav nav-pills">
+                        <li ><a data-toggle="pill" href="#home"><b>CONTACT </b></a></li>
+                        <li><a data-toggle="pill" href="#menu1"><b>ADDITION</b></a></li>
+                        <li><a data-toggle="pill" href="#menu2"><b>TASK DETAILS</b></a></li>
+                    </ul>
+                    </div>
+                </div><br />    
+            </div>
+    
+            <div id="tabids" style="margin-top: -19px;">
+                <img class="subulbg" src="{!URLFOR($Resource.ContactScreen,'img/subUL-bakcground.png')}" alt="" />
+        
+                <div class="tab-content" style="margin-top: -18px; ">
+            
+                    <div id="home" class="tab-pane fade in active">
+                    <ul class="nav nav-pills">
+                        <li><a data-toggle="pill" href="#home1">CONTACT INFORMATION</a></li>
+                        <li><a data-toggle="pill" href="#home2">CONTACT ADDRESS</a></li>
+                        <li><a data-toggle="pill" href="#home3">OTHER INFORMATION</a></li>
+                    </ul>
+                    </div>
+            
+                    <div id="menu1" class="tab-pane fade">
+                        <ul class="nav nav-pills">
+                            <li><a data-toggle="pill" href="#menu111">Addition Details1</a></li>
+                            <li><a data-toggle="pill" href="#menu222">Addition Details2</a></li>
+                            <li><a data-toggle="pill" href="#menu333">Addition Details3</a></li>
+                        </ul>
+                    </div>
+            
+                    <div id="menu2" class="tab-pane fade">
+                        <ul class="nav nav-pills">
+                            <li><a data-toggle="pill" href="#menu21">TASK SET UP</a></li>
+                            <li><a data-toggle="pill" href="#menu22">ASSINGED</a>  </li>
+                            <li><a data-toggle="pill" href="#menu23">EMAIL</a>  </li>
+                            <li><a data-toggle="pill" href="#menu24">APPROVAL</a>  </li>
+                            <li><a data-toggle="pill" href="#menu25">VIEWABLE</a>  </li>
+                            <li><a data-toggle="pill" href="#menu26">EDITABLE</a>  </li>
+                            <li><a data-toggle="pill" href="#menu27">RECURRING</a>  </li>
+                            <li><a data-toggle="pill" href="#menu28">FOREC STOP</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><br/>
+    
+        
+        
+            <div style="margin-top: -22px;">
+            <img src="../subTabSelector-bg.png"/>
+                <div  id="lowesttab" class="tab-content">
+                    <div id="menu21" class="tab-pane fade">
+                        <a data-toggle="pill" href="#menu31">Task Set Up</a><br/>
+                        <h3> Task Set Up of the Contact. </h3>
+                
+                    </div>
+                    <div id="menu22" class="tab-pane fade">
+                        <a data-toggle="pill" href="#menu32">Assinged</a>
+                        <h3> Assinged the Contact </h3>
+                    </div>
+                    <div id="menu23" class="tab-pane fade">
+                    <a data-toggle="pill" href="#menu33">Email</a>
+                    <h3> Email of the All Contact </h3>
+                    </div>
+                    <div id="menu24" class="tab-pane fade">
+                        <a data-toggle="pill" href="#menu34">Approval</a>
+                        <h3> Approval of the Contacts </h3>
+                    </div>
+                    <div id="menu25" class="tab-pane fade">
+                        <a data-toggle="pill" href="#menu35">Viewable</a>
+                        <h3> Viewable field of the Contact</h3>
+                    </div>
+                    <div id="menu26" class="tab-pane fade">
+                        <a data-toggle="pill" href="#menu36">Editable</a>
+                        <h3> Editable part of the Contact </h3>
+                    </div>
+                    <div id="menu27" class="tab-pane fade">
+                        <a data-toggle="pill" href="#menu37">Recurring</a>
+                        <h3> Recurring part of the Contact </h3>
+                    </div>
+                    <div id="menu28" class="tab-pane fade">
+                        <a data-toggle="pill" href="#menu38">Force Stop</a>
+                        <h3> Force Stop Details of the Contact </h3>
+                    </div>
+                    
+                    
+                    <div id="home2" class="tab-pane fade">
+                        <a data-toggle="pill" href="#home22">Address</a>
+                            <div>
+                                <h3> Please here put the contact address</h3> 
+                                 City: <input type="text"  />
+                                 State:<input type="text" />
+                            </div>
+                    </div>
+                    <div id="home3" class="tab-pane fade">
+                        <a data-toggle="pill" href="#home33">Other Informations</a>
+                        <h3> Enter the other information of contact </h3>
+                    </div>
+                    <div id="menu111" class="tab-pane fade">
+                        <a data-toggle="pill" href="#">aa</a>
+                    </div>
+                    <div id="menu222" class="tab-pane fade">
+                        <a data-toggle="pill" href="#">bb</a>
+                    </div>
+                    <div id="menu333" class="tab-pane fade">
+                        <a data-toggle="pill" href="#">cc</a>
+                    </div>
+                
+                    <div id="home1" class="tab-pane fade">
+                        <a data-toggle="pill" href="#home21">Informations</a>
+
+        <!-- Content of the Conatct Infoormnation -->
+                    
+                        <div class="container" >
+                            <div class="page-content">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h3> Contact Information </h3>
+                                        <form class="form-horizontal">
+                                          <div class="form-group">
+                                            <label for="inputName1" class="col-xs-2 control-label">Name:</label>
+                                            <div class="col-xs-10">
+                                              <input type="text" class="form-control" id="inputName1" placeholder="Name"/>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="inputDeparment" class="col-xs-2 control-label">Department:</label>
+                                            <div class="col-xs-10">
+                                              <input type="text" class="form-control" id="inputDeparment" placeholder="Department"/>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="inputEmail" class="col-xs-2 control-label">Email:</label>
+                                            <div class="col-xs-10">
+                                              <input type="Email" class="form-control" id="inputEmail" placeholder="Email"/>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="inputDescription" class="col-xs-2 control-label">Description:</label>
+                                            <div class="col-xs-10">
+                                              <input type="text" class="form-control" id="inputDescription" placeholder="Description"/>
+                                            </div>
+                                          </div>
+                                        </form> 
+                                    </div>
+                                    
+                                    <div class="col-sm-6">
+                                        <div class="row">
+                                            <h3> Picklist Values </h3>
+                                            <div class="col-sm-4">
+                                                <label>Industry </label>
+                                                <div class="stageSelectBox">
+                                                    <div class="stage-selection-box" style="position: relative;">
+                                                        <select value="industry" name="industry">
+                                                            <option value="-- None --">-- None -- </option>
+                                                            <option value="It">It</option>
+                                                            <option value="Bank">Bank</option>
+                                                            <option value="Arts">Arts</option>
+                                                        </select>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                                
+                                            <div class="col-sm-4">  
+                                                <label>Department </label>
+                                                <div class="stageSelectBox">
+                                                    <div class="stage-selection-box">
+                                                        <select value="department" name="department">
+                                                            <option value="-- None --">-- None -- </option>
+                                                            <option value="C">C</option>
+                                                            <option value="C++">C++</option>
+                                                            <option value="Java">Java</option>
+                                                            <option value="Finance">Finance</option>
+                                                            <option value="Account">Account</option>
+                                                            <option value="Political">Political</option>
+                                                            <option value="Geography">Geography</option>
+                                                        </select>   
+                                                    </div>          
+                                                </div>
+                                            </div>  
+                                        
+                                            <div class="col-sm-4">
+                                                <label> Role </label>
+                                                <div class="stageSelectBox">
+                                                    <div class="stage-selection-box">
+                                                        <select value="role" name="role">
+                                                            <option value="-- None --">-- None -- </option>
+                                                            <option value="Coder">Coder</option>
+                                                            <option value="Desingner">Desingner</option>
+                                                            <option value="C.A">C.A.</option>
+                                                            <option value="C.S.">C.S.</option>
+                                                            <option value="Leader">Leader</option>
+                                                            <option value="GATeacher">GATeacher</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>                          
+                                    
+                                        </div>
+                                    </div>          
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                
+                
+                
+                
+                </div>
+            </div>
+    <!-- All Java Scripts for the app includes here -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <apex:includeScript value="{!URLFOR($Resource.ContactScreen, 'js/jquery.min.js')}"/>
+    <!-- Include all compiled plugins (below), or include individual files as needed --> 
+    <apex:includeScript value="{!URLFOR($Resource.ContactScreen, 'bootstrap-3.3.5/js/bootstrap.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ContactScreen, 'js/contactScript.js')}"/>
+    
+        
+    </body>
+    </apex:form>
+</apex:page>

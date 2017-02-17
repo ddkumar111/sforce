@@ -1,0 +1,6 @@
+<apex:page >
+   <apex:pageMessage severity="info" 
+   strength="1" 
+   summary="{!$Label.site.temp_password_sent}" 
+   />
+</apex:page>

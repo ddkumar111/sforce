@@ -1,0 +1,23 @@
+<apex:page >
+
+<html>
+<head>
+<style>
+body {
+    
+    background-image: url("{!$Resource.bulboff}");
+    background-repeat: no-repeat;
+}
+</style>
+</head>
+<body>
+
+<h1>Hello World!</h1>
+<p>W3Schools background image example.</p>
+<p>The background image is only showing once, but it is disturbing the reader!</p>
+
+</body>
+</html>
+
+
+</apex:page>

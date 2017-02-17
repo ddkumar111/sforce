@@ -1,0 +1,277 @@
+<!--
+/**
+ *  @Description    :   Locate Account Page for ASDHealthcare New App.
+ *
+ *  Created By      :   Bhavi Sharma(Simplyforce)
+ *
+ *  Created Date    :   08/22/2015
+ *
+ *  Revisoion Log   :   V_1.0 created
+**/
+-->
+<apex:page showHeader="false" sidebar="false" standardStyleSheets="false"  id="page">
+    <head>
+        <c:ASDHealthcareHeadTag />
+        
+        <style>
+        @media (max-width: 768px) {
+            .wrapperCls {
+                left: 250px;
+                position: absolute;
+            }
+            .wrapperClss {
+                left: 0px;
+            }
+            .headerMenuClass {
+                left: 0px;
+                position: fixed !important;
+               
+                top: 0px;
+                width: 250px !important;
+                display: block !important;
+                
+            }
+            #logoId {
+                margin-left: 11%; 
+            }
+            .activeColor {
+                color: #F7F60C !important;
+            }
+            
+            body {
+                overflow-x: hidden;
+            }
+            
+            .collapse {
+                display:  block !important;
+            }
+            .sub-menu .sub-menu-col.col3 {
+            	margin-left: 2% !important;
+            }
+            .navbar-collapse {
+                border-top: 0px;
+            }
+            .sub-menu div {
+				    margin-left: 2%;
+			
+			}
+			hr {
+				border: none;
+			}
+			.login-tab-col.col2 {
+    			display: inline-block !important;
+    			margin-left: 5%;
+    		}
+    		#tabs-4 .bottom-pics div {
+    			display: none !important;
+			}
+			
+			.login-tab-col.col1 {
+				padding-left: 4% !important;
+			}
+			#tabs-4 .search-col.col1 {
+    			width: 100% !important;
+			}
+			.search-col.col2 {
+				display: none !important;
+			}
+			.login-tab-col.col2 div img {
+				max-width: 100% !important;
+				width: auto !important;
+			}	
+			.col-sm-6.button {
+				text-align: center !important;
+			}
+			input[type=text], #tabs input[type=password] {
+			    max-width: 400px !important;
+			    width: 100% !important;
+			}
+			#tabs-4 .search-col div {
+				padding-left: 2%;
+			}
+			
+			
+        }
+        
+        @media screen and (min-width: 768px) {
+            #header-menu {
+                height: auto !important;
+            }
+            
+        }
+        </style>
+        
+        
+    </head>
+    
+    <apex:form id="form">
+        
+        <body>
+            <div id="wrapper">
+                <div id="header">
+                    <c:ASDHealthcareHeader />   
+                </div>
+                <div id="top-nav">
+                    <c:ASDHealthcareTopNav /> 
+                </div>
+                <div id="container">
+                 <!--    <div class="container">
+                        <div id="content">
+                            <div class="dpink">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                       <div class="content">
+                                            <h2 class="the-title">FluFirst Vaccine Preorder<br /><span>{!$Label.ASD_PREORDER_HEADER_SEASON_1}</span></h2>
+                                            <p>When you choose ASD Healthcare as your flu partner, you get the widest range of vaccine products from one source.Plus you get our great ASD Healthcare advantage-superior price protection,flexible return option and preferred delivery schedules.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="full-widtd">
+                                            <img src="{!URLFOR($Resource.ASDHealthcare,'img/login.jpg')}" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="the-title">Locate your account to place your order.</h3>
+                            <p>Please enter the following information so that we may locate your account in our records.</p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="location-form">
+                                        <strong class="num">1</strong>
+                                        <p><label>ASD Healthcare Number</label></p>
+                                        <p>
+                                            <apex:inputField value="{!selectedAccount.Account_Number__c}" id="accountNumber" style="background-color: white; border: 1px solid darkgrey;"/>
+                                        </p>
+                                        <p>Please use ASD Healthcare account number and not your wholesaler ID</p>
+                                        <p><label><strong>OR</strong></label></p>
+                                        <p><label>State Medical or Pharmacy License Number</label></p>
+                                        <p>
+                                            <apex:inputField value="{!selectedAccount.ASD_SML__c}" id="stateMedicalLicense" style="background-color: white; border: 1px solid darkgrey;"/>
+                                            <div style="color:red;" id="value_Is_Required"></div>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="location-form">
+                                        <strong class="num">2</strong>
+                                        <p><label>Shipping Zip Code</label></p>
+                                        <p>
+                                            <apex:inputText value="{!selectedAccount.ShippingPostalCode}" id="shippingZipCode" style="background-color: white; border: 1px solid darkgrey;"/>
+                                            <div style="color:red;" id="zipCode_Is_Required"></div>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pull-right">
+                                <a href="javascript:void(0)" style="margin-bottom:20px;" onClick="return validateAccountInfo();" class="btn btn-small btn-green">Continue</a>
+                            </div>
+                          <!--  <apex:outputPanel id="dataPanel" rendered="{!listAccount.size > 1}">
+                                <div class="order-block" style="overflow-y:scroll;clear:both;">
+                                    <table class="style-01">
+                                        <thead>
+                                            <tr>
+                                                <th>Account<br />Number</th>
+                                                <th>Account Name</th>
+                                                <th>Shipping<br />Address</th>
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Zip Code</th>
+                                                <th>License<br/>Number</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <apex:repeat value="{!listAccount}" var="item">
+                                                <tr>
+                                                    <td>{!item.Account_Number__c}</td>
+                                                    <td>{!item.Name}</td>
+                                                    <td>{!item.ShippingStreet}</td>
+                                                    <td>{!item.ShippingCity}</td>
+                                                    <td>{!item.ShippingState}</td>
+                                                    <td>{!item.ShippingPostalCode}</td>
+                                                    <td>{!item.ASD_SML__c}</td>
+                                                    <td>
+                                                        <a href="javascript:void(0)" onClick="goToSchAccount('{!item.Id}');" class="btn btn-small btn-green">Choose Account</a>
+                                                    </td>
+                                                </tr>
+                                            </apex:repeat>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </apex:outputPanel> 
+                        </div> 
+                    </div>  -->
+                </div>
+                <div id="footer">
+                    <c:ASDHealthcareFooter />
+                </div>
+            </div>
+            <a class="up-top" href="#"></a>
+        </body>
+     </apex:form>
+     <script>
+        
+     $(window).ready(function() {
+     
+         $("#menuItem").on("click", function () {
+         	$('#header-menu').removeClass('headerMenuClass');
+         	$('#wrapper').removeClass('wrapperCls');
+     }); 
+     
+     $("#tabs").on("click", ".close", function () {
+     	$("#tabs-1").slideUp("slow"); 
+       });
+        
+        $("#loginItem").on("click", function () {
+            $('#header-menu').removeClass('headerMenuClass');
+         	$('#wrapper').removeClass('wrapperCls'); 
+        
+        });
+        
+        $("#tabs").on("click", ".close", function () {
+            $("#tabs-2").slideUp("slow"); 
+        });
+        
+        $("#searchItem").on("click", function () {
+            $('#header-menu').removeClass('headerMenuClass');
+         	$('#wrapper').removeClass('wrapperCls');
+        
+        });
+        
+        $("#tabs").on("click", ".close", function () {
+            $("#tabs-4").slideUp("slow"); 
+        });
+        
+            
+            
+            $("#showLeft").click(function () {
+                
+                //$(this).css("opacity", "1");
+                
+                
+                
+                $('#wrapper').addClass('wrapperCls');
+                
+                $('#header-menu').addClass('headerMenuClass');
+                
+                $('.headerMenuClass').css('height', window.innerHeight+'px');
+                
+                $(".headerMenuClass").animate({left: '0px'}, "slow");
+                
+            });
+            
+            $(".closeBtn").click(function () {
+                
+                $('#wrapper').removeClass('wrapperCls');
+                $('#header-menu').removeClass('headerMenuClass');
+            });
+            
+        
+        }); 
+            
+              
+        
+    
+    </script>   
+     
+</apex:page>

@@ -1,0 +1,123 @@
+<apex:page standardController="Contact" standardStylesheets="false">
+  <head>
+  <apex:stylesheet value="{!URLFOR($Resource.SLDS0121, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  
+  </head>
+
+   <!-- Remote Objects definition to set accessible sObjects and fields -->
+   <apex:remoteObjects >
+       <apex:remoteObjectModel name="Opportunity" jsShorthand="oppt" fields="Name,Id,Amount,StageName,CloseDate">
+       </apex:remoteObjectModel>
+   </apex:remoteObjects> 
+
+    <div class="form">
+        <div class="slds">  
+             
+          <div class="slds-form-element">
+              <label class="slds-form-element__label" > Opportunity Name</label>
+              <div class="slds-form-element__control">
+                  <input id="oppName" class="slds-input slds-is-required" type="text" placeholder="Text" />
+              </div>
+          </div>       
+          
+          <div class="slds-form-element">
+              <label class="slds-form-element__label" > Amount </label>
+              <div class="slds-form-element__control">
+                  <input id="oppAmount" class="slds-input" type="number" placeholder="amount" />
+              </div>
+          </div>
+          
+          <div class="slds-form-element">
+          <div class="slds-form-element__control">
+             <label class="slds-form-element__label" > Stage</label>
+             <div class="slds-select_container">
+                 <select id="oppStage" class="slds-select" name="Stage">
+                      <option value="Prospecting">Prospecting</option>
+                      <option value="Qualification">Qualification</option>
+                      <option value="mercedes">Mercedes</option>
+                      <option value="Needs Analysis">Needs Analysis</option>
+                      <option value="Value Proposition">Value Proposition</option>
+                      <option value="Id. Decision Makers">Id. Decision Makers</option>
+                      <option value="Perception Analysis">Perception Analysis</option>
+                      <option value="Proposal/Price Quote">Proposal/Price Quote</option>
+                      <option value="Negotiation/Review">Negotiation/Review</option>
+                      <option value="Closed Won">Closed Won</option>
+                      <option value="Closed Lost">Closed Lost</option>
+                 </select>   
+            </div>
+          </div> 
+          </div> 
+            
+          <div class="slds-form-element">
+              <label class="slds-form-element__label"> Closed Date </label>
+              <div class="slds-form-element__control">
+                  <input id="oppClosedDate" class="slds-input" type="date" placeholder="Text" required="required"/>
+              </div>
+          </div>
+           
+          <div class="slds-form-element">
+            <button type="button" style="margin-top: 10px;" class="slds-button slds-button--brand" onClick="createOpportunity()"> Save </button>
+          </div>
+              
+        </div>
+    </div>
+    
+    <script>
+        //Function to Create Opportunity record
+        function createOpportunity(){
+            //var dt = new Date('2015-12-12');
+            //var datevalue = $('#oppClosedDate').val();
+            
+            var date= $('#oppClosedDate').val();
+            var d=new Date(date);
+            var dd=d.getDate();
+            var dd= ('0' + d.getDate()).slice(-2);
+            var mm= ('0' + (d.getMonth()+1)).slice(-2);
+            var yy= d.getFullYear();
+            var newdate= yy+"-"+mm+"-"+dd;
+            
+            var dt = new Date(newdate);
+            
+            console.log(newdate);  
+            console.log(date);
+            
+            var oppDetails = { Name: $('#oppName').val(),
+                Amount : $('#oppAmount').val(),
+                StageName: $('#oppStage').val(),
+                CloseDate: dt };
+            
+            var opp = new RemoteObjectModel.Opportunity();
+            opp.create(oppDetails, function(err) {
+                if(err) { 
+                    console.log(err);    
+                }
+                else {
+                    //console.log(opp.get('Id')); 
+                    navigate(opp.get('Id'));
+                    //break;
+                }
+             });  
+        }
+        
+        
+        //Navigation in SF1 or in web desktop UI
+        function navigate(recordId){
+         
+            if (typeof sforce !== 'undefined'){
+                sforce.one.navigateToSObject(recordId);
+            } else {
+                //web desktop UI(Salesforce Classic)
+                window.top.location.href= "/" + recordId;
+            }
+         
+        }
+        
+    </script>
+    
+    <apex:remoteObjects jsNamespace="RemoteObjectModel">
+        <apex:remoteObjectModel name="Opportunity" fields="Name,Amount,StageName,CloseDate">
+        </apex:remoteObjectModel>
+    </apex:remoteObjects>
+    
+</apex:page>

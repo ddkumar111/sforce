@@ -1,0 +1,39 @@
+<apex:page controller="ContactSelectValue" >
+     
+     <!-- Start Of the Page -->
+     <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="2">
+                
+                <!-- Define the BloclsectionItems -->
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Industry Type"/>
+                        <apex:selectList value="{!selectedIndustry}" size="1" >
+                            <apex:selectoptions value="{!industrySelectOption}"/>
+                            <apex:actionSupport event="onchange" action="{!populateOption}"  reRender="deparmentids"/>
+                        </apex:selectList>
+                </apex:pageBlockSectionItem> 
+                
+                <apex:pageblockSectionItem >
+                    <apex:outputPanel id="deparmentids" style="margin-left: 100px">
+                    <apex:outputLabel value="Department Type"/>
+                        <apex:selectList value="{!selectedDepartment}" size="1">
+                            <apex:selectoptions value="{!departmentSelectedOption}"/>
+                            <apex:actionSupport event="onchange" action="{!populateOptionRole}"  reRender="roleids"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageblockSectionItem>
+              
+                <apex:pageblockSectionItem >
+                    <apex:outputPanel id="roleids" style="margin-left: 100px">
+                    <apex:outputLabel value="Role Type"/><br/><br/>
+                        <apex:selectList value="{!selectedRole}" size="1">
+                            <apex:selectoptions value="{!roleSelectedOption }"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageblockSectionItem>              
+            
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

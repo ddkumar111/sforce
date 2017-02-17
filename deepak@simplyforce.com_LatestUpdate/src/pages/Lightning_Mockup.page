@@ -1,0 +1,194 @@
+<apex:page >
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0121, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:includeScript value="{!URLFOR($Resource.Sortable, 'sortable.js')}"/>
+        <style>
+            .searchSection {
+                margin-bottom: 3%;
+            }
+            a.sortheader {
+                text-decoration: none !important;
+            }
+            .slds a {
+                color: #161617;
+            }
+            .slds-table {    
+                margin-top: 3%;
+            }
+        </style>
+        <script>
+            
+        </script>
+    </head>
+    
+    <div class="form">
+        <div class="slds"> 
+            <h3 class="slds-section-title--divider"> Search </h3>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="date"> Date </label>
+                <div class="slds-form-element__control slds-datepicker">
+                    <input type="text" class="slds-input" placeholder="Date" onfocus="(this.type='date')"/>
+                    
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="date"> Time </label>
+                <div class="slds-select_container">
+                     <select id="timeValue" class="slds-select" name="Select Time">
+                          <option value="None">None</option>
+                          <option value="9.00">9.00</option>
+                          <option value="10.00">10.00</option>
+                          <option value="11.00">11.00</option>
+                          <option value="12.00">12.00</option>
+                          <option value="1.00">1.00</option>
+                          <option value="2.00">2.00</option>
+                          <option value="3.00">3.00</option>
+                          <option value="4.00">4.00</option>
+                     </select>   
+                </div>
+            </div>
+            <span class="searchSection "></span>
+                
+            <table class="slds-table slds-table--bordered slds-table--cell-buffer sortable" id="anyid">
+                <thead>
+                    <tr class="slds-text-title--caps" style="text-transform: uppercase;">
+                        <th class="slds-is-sortable slds-is-resizable" scope="col">
+                            <div class="slds-truncate" title="Attorney">Attorney</div>
+                        </th>
+                        <th class="slds-is-sortable slds-is-resizable" scope="col">
+                            <div class="slds-truncate" title="Date">Date</div>
+                        </th>
+                        <th class="slds-is-sortable slds-is-resizable" scope="col">
+                            <div class="slds-truncate" title="Time">Time</div>
+                        </th>
+                     </tr>
+                </thead>
+                <tbody id="people">
+                    <tr>
+                        <td data-label="Attorney">
+                            <div class="slds-truncate" title="Daniel Exner"><a href="javascript:void(0);">Daniel Exner</a></div>
+                        </td>
+                        <td data-label="Date">
+                            <div class="slds-truncate" title="11/4/2016">11/4/2016</div>
+                        </td>
+                        <td data-label="Time">
+                            <div class="slds-truncate" title="2:00 PM">2:00 PM</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Attorney">
+                            <div class="slds-truncate" title="Holly Mullin"><a href="javascript:void(0);">Holly Mullin</a></div>
+                        </td>
+                        <td data-label="Date">
+                            <div class="slds-truncate" title="11/4/2016">11/4/2016</div>
+                        </td>
+                        <td data-label="Time">
+                            <div class="slds-truncate" title="2:00 PM">2:00 PM</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Attorney">
+                            <div class="slds-truncate" title="Katy Eckhardt"><a href="javascript:void(0);">Katy Eckhardt</a></div>
+                        </td>
+                        <td data-label="Date">
+                            <div class="slds-truncate" title="11/4/2016">11/4/2016</div>
+                        </td>
+                        <td data-label="Time">
+                            <div class="slds-truncate" title="2:00 PM">2:00 PM</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Attorney">
+                            <div class="slds-truncate" title="Meg O'Marro"><a href="javascript:void(0);">Meg O Marro</a></div>
+                        </td>  
+                        <td data-label="Date">
+                            <div class="slds-truncate" title="11/4/2016">11/4/2016</div>
+                        </td>
+                        <td data-label="Time">
+                            <div class="slds-truncate" title="2:00 PM">2:00 PM</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Attorney">
+                            <div class="slds-truncate" title="Trisha Festerling"><a href="javascript:void(0);">Trisha Festerling</a></div>
+                        </td>
+                        <td data-label="Date">
+                            <div class="slds-truncate" title="11/4/2016">11/4/2016</div>
+                        </td>
+                        <td data-label="Time">
+                            <div class="slds-truncate" title="2:00 PM">2:00 PM</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Attorney">
+                            <div class="slds-truncate" title="Daniel Exner"><a href="javascript:void(0);">Daniel Exner</a></div>
+                        </td>
+                        <td data-label="Date">
+                            <div class="slds-truncate" title="11/4/2016">11/4/2016</div>
+                        </td>
+                        <td data-label="Time">
+                            <div class="slds-truncate" title="3:00 PM">3:00 PM</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Attorney">
+                            <div class="slds-truncate" title="Erin Boyd"><a href="javascript:void(0);">Erin Boyd</a></div>
+                        </td>
+                        <td data-label="Date">
+                            <div class="slds-truncate" title="11/4/2016">11/4/2016</div>
+                        </td>
+                        <td data-label="Time">
+                            <div class="slds-truncate" title="3:00 PM">3:00 PM</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Attorney">
+                            <div class="slds-truncate" title="Holly Mullin"><a href="javascript:void(0);">Holly Mullin</a></div>
+                        </td>
+                        <td data-label="Date">
+                            <div class="slds-truncate" title="11/4/2016">11/4/2016</div>
+                        </td>
+                        <td data-label="Time">
+                            <div class="slds-truncate" title="3:00 PM">3:00 PM</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Attorney">
+                            <div class="slds-truncate" title="Katy Eckhardt"><a href="javascript:void(0);">Katy Eckhardt</a></div>
+                        </td>
+                        <td data-label="Date">
+                            <div class="slds-truncate" title="11/4/2016">11/4/2016</div>
+                        </td>
+                        <td data-label="Time">
+                            <div class="slds-truncate" title="3:00 PM">3:00 PM</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Attorney">
+                            <div class="slds-truncate" title="Daniel Exner"><a href="javascript:void(0);">Daniel Exner</a></div>
+                        </td>
+                        <td data-label="Date">
+                            <div class="slds-truncate" title="11/4/2016">11/4/2016</div>
+                        </td>
+                        <td data-label="Time">
+                            <div class="slds-truncate" title="4:00 PM">4:00 PM</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Attorney">
+                            <div class="slds-truncate" title="Erin Boyd"><a href="javascript:void(0);">Erin Boyd</a></div>
+                        </td>
+                        <td data-label="Date">
+                            <div class="slds-truncate" title="11/4/2016">11/4/2016</div>
+                        </td>
+                        <td data-label="Time">
+                            <div class="slds-truncate" title="4:00 PM">4:00 PM</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </html>
+</apex:page>

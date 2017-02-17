@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>33.0</apiVersion>
+    <description>This is a generic template for Visualforce Component.  With this template, you may adjust the default elements and values and add new elements and values.</description>
+    <label>ASDHealthcareTopNav</label>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>22</minorNumber>
+        <namespace>astrea_oct</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>5</majorNumber>
+        <minorNumber>2</minorNumber>
+        <namespace>sf4twitter</namespace>
+    </packageVersions>
+</ApexComponent>

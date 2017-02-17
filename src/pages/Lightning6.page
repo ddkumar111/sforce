@@ -1,0 +1,184 @@
+<apex:page >
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+    <head>
+      <title>Salesforce Lightning Design System Trailhead Module</title>
+      <apex:stylesheet value="{!URLFOR($Resource.SLDS0121, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+       <style>
+           
+           .slds-picklist {
+  position: relative;
+
+  .slds-dropdown {
+    width: $size-small;
+    max-height: calc((((#{$font-size-medium} * #{$line-height-text}) + #{$spacing-medium}) * 5) + #{$spacing-x-small} + #{$border-width-thick});
+    overflow-y: auto;
+    @include enable-ios-momentum-scrolling;
+  }
+
+ --fluid {
+    .slds-picklist__label,
+    .slds-dropdown {
+      width: auto;
+      min-width: 0;
+      max-width: $size-small;
+    }
+  }
+}
+
+.slds-picklist__label {
+  padding-right: $spacing-x-large;
+  width: $size-small;
+  color: $color-text-default;
+  text-align: left;
+
+  .slds-icon {
+    @include square($square-icon-small-content);
+    position: absolute;
+    right: $spacing-medium;
+    top: 50%;
+    margin-top: (($square-icon-small-content / 2) * -1);
+    fill: $color-text-icon-default;
+  }
+
+ [aria-disabled="true"] {
+    border-color: $color-border-input-disabled;
+    background-color: $color-background-input-disabled;
+    cursor: not-allowed;
+    user-select: none;
+  }
+
+  .slds-truncate {
+    display: block;
+  }
+}
+           
+       
+       </style> 
+    
+    
+    
+    </head> 
+    
+    <body>
+           <div class="slds"> 
+            <div class="slds-picklist" aria-expanded="true">
+  <button class="slds-button slds-button--neutral slds-picklist__label" aria-haspopup="true">
+    <span class="slds-truncate">Select an Option</span>
+    <svg aria-hidden="true" class="slds-icon">
+      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+    </svg>
+  </button>
+  <div class="slds-dropdown slds-dropdown--left slds-dropdown--menu">
+    <ul class="slds-dropdown__list" role="menu">
+      <li id="menu-16-0" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option A</p>
+        </a>
+      </li>
+      <li id="menu-17-1" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option B</p>
+        </a>
+      </li>
+      <li id="menu-18-2" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option C</p>
+        </a>
+      </li>
+      <li id="menu-19-3" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option D</p>
+        </a>
+      </li>
+      <li id="menu-20-4" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option E</p>
+        </a>
+      </li>
+      <li id="menu-21-5" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option F</p>
+        </a>
+      </li>
+      <li id="menu-22-6" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option G</p>
+        </a>
+      </li>
+      <li id="menu-23-7" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option H</p>
+        </a>
+      </li>
+      <li id="menu-24-8" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option I</p>
+        </a>
+      </li>
+      <li id="menu-25-9" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option J</p>
+        </a>
+      </li>
+      <li id="menu-26-10" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option K</p>
+        </a>
+      </li>
+      <li id="menu-27-11" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option L</p>
+        </a>
+      </li>
+      <li id="menu-28-12" href="#" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitemradio">
+          <p class="slds-truncate">
+            <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>Option MNOPQRSTUVWXYZ 123456</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+    
+    </body>
+   </html>   
+</apex:page>

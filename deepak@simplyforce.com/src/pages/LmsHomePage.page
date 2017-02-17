@@ -1,0 +1,149 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="img/logosss.png" type="image/png" /><title> LMS | University Of LPL </title>
+    
+
+   <!-- Bootstrap core CSS -->
+    <apex:stylesheet value="{!URLFOR($Resource.LMSFile, 'css/bootstrap.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.LMSFile, 'css/bootstrap.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.LMSFile, 'css/style.css')}"/>
+    
+    
+    
+    
+</head>
+
+<body>
+<div id="dateId" style="text-align:center"> </div>
+<div class="containerCls">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"> 
+            <img src="{!URLFOR($Resource.LMSFile,'img/Gray_user_profile_icon.png')}" />
+            <p> Deepak Kumawat </p>
+            <hr/>
+                                                                                
+            <div  style="color: #0D5B79;font-size: 16px;">&#9778; LPL Financial <img src="{!URLFOR($Resource.LMSFile,'img/logosss.png')}" /></div>
+            
+        </div>
+        <div style="border-left: 2px solid #ccc;" class="col-sm-10">
+            <div class="RightPart">
+                <div class="row">
+     <div class="col-sm-2"> <img src="{!URLFOR($Resource.LMSFile,'img/logosss.png')}" /><p class="redClass1"><b> LPL <span class="uClass1"> U </span> </b></p></div>
+                    <div class="col-sm-2 col-xs-3">
+                        <p class="welcomeCls"> Welcome to </p>
+                    </div>
+                    <div class="col-sm-4 col-xs-5">
+                        <p class="redClass"><b> LPL <span class="uClass"> U </span> </b></p>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <img class="stduentclass" src="{!URLFOR($Resource.LMSFile,'img/studentssss.png')}" />
+                    </div>    
+                
+                </div>
+            </div>
+            <div class="rightBottomLayer">
+                <p> YOUR LEARNING, YOUR DEVELOPMENT, YOUR WAY, IT'S ALL ABOUT U </p>
+            </div>
+               
+            <p style="color: #0D5B79;font-size: 18px;"> What's News ? </p>    
+            
+            <div style="margin-left: 5px;" class="row">
+                <div  id="fristcol" class="col-sm-3">
+                    <p class="maincls"> Learning Management Systems range from systems for managing.</p>
+                    <p class="subcls">and educational records to software for distributing online or blended/hybrid                                                         college courses over the Internet with features for online collaboration.</p>
+                </div>
+                
+                <div id="secondcol" class="col-sm-3">
+                    <p class="maincls"> Learning Management Systems range from systems for managing.</p>
+                    <p class="subcls">and educational records to software for distributing online or blended/hybrid                                                         college courses over the Internet with features for online collaboration.</p>
+                </div>
+                
+                <div id="thirdcol" class="col-sm-3">
+                    <p class="maincls"> Learning Management Systems range from systems for managing.</p>
+                    <p class="subcls">and educational records to software for distributing online or blended/hybrid                                                         college courses over the Internet with features for online collaboration.</p>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>         
+            
+            <div class="lastpart">  
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p style="color: #0D5B79;font-size: 18px;"> My Training Goal Progress </p>
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-3">
+                                <img src="{!URLFOR($Resource.LMSFile,'img/downloadsss.png')}" />
+                            </div>
+                            <div class="col-sm-9 col-xs-9">
+                                <button class="quickButton"><b> My Quicks </b></button>
+                                
+                                <p style="color: #f09850;margin-top: 20px;padding: 0px 15px;"> Your Total Hours </p>
+                                <img style="min-width:140px" src="{!URLFOR($Resource.LMSFile,'img/Pic1111222.png')}" />
+                                
+                            </div>
+                        </div>  
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <p style="color: #0D5B79;font-size: 18px;"> Quick Links </p>
+                        
+                        <div class="row">
+                            <div class="col-sm-2 col-xs-2">
+                                <img src="{!URLFOR($Resource.LMSFile,'img/logosss.png')}" />
+                            </div>
+                            <div class="col-sm-10 col-xs-10" id="FristRow">
+                                <a href="https://in.yahoo.com/"><p style="cursor: pointer;"> Upcoming Classes </p></a>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-2 col-xs-2">
+                                <img src="{!URLFOR($Resource.LMSFile,'img/logosss.png')}" />
+                            </div>
+                            <div  class="col-sm-10 col-xs-10" id="SecondRow">
+                                <a href="https://in.yahoo.com/"><p style="cursor: pointer;"> Featured &amp; Training Classses </p></a>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-2 col-xs-2">
+                                <img src="{!URLFOR($Resource.LMSFile,'img/logosss.png')}" />
+                            </div>
+                            <div  class="col-sm-10 col-xs-10" id="ThirdRow">
+                                <a href="https://in.linkedin.com/"><p style="cursor: pointer;"> External Credits </p></a>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-2 col-xs-2">
+                                <img src="{!URLFOR($Resource.LMSFile,'img/logosss.png')}" />
+                            </div>
+                            <div  class="col-sm-10 col-xs-10" id="ForthRow">
+                                <a href="https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1"><p style="cursor: pointer;"> Pathways Classes Courses </p> </a>
+                            </div>
+                        </div>                            
+                        
+                    </div>
+                </div>
+                
+                <div class="col-sm-2"></div>
+                
+           </div>             
+            <a href="file:///C:/Users/mahendra/Desktop/Html%20Page/SecondPage.html#"> Please click for next page </a>
+            </div>   
+        </div>
+    
+</div>
+</div>
+<apex:includeScript value="{!URLFOR($Resource.LMSFile, 'js/jquery-1.11.3.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.LMSFile, 'js/bootstrap.min.js')}"/>
+<script>
+document.getElementById("dateId").innerHTML =  Date();
+</script>
+</body>
+
+
+</apex:page>

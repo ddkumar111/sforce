@@ -1,0 +1,54 @@
+<apex:page >
+  
+  
+  
+  <body>
+      <div class="slds">
+      
+      <div class="slds-box slds-theme--default">
+          <p>This is a
+          <strong>default</strong> theme and here is a <a href="#">link</a>.</p>
+      </div>
+    
+      <div class="slds-box slds-theme--shade">
+      <p>This is a
+        <strong>shade</strong> theme and here is a <a href="#">link</a>.</p>
+      </div>
+     
+      <div class="slds-box slds-theme--inverse">
+      <p>This is an
+        <strong>inverse</strong> theme and here is a <a href="#">link</a>.</p>
+      </div>
+     
+     <div class="slds-box slds-theme--alt-inverse">
+      <p>This is an
+        <strong>alt-inverse</strong> theme and here is a <a href="#">link</a>.</p>
+     </div>
+     
+     <div class="slds-box slds-theme--info">
+      <p>This is a
+        <strong>info</strong> theme and here is a <a href="#">link</a>.</p>
+     </div>
+    <div class="slds-box slds-theme--success">
+      <p>This is a
+        <strong>success</strong> theme and here is a <a href="#">link</a>.</p>
+    </div>
+    <div class="slds-box slds-theme--warning">
+      <p>This is a
+        <strong>warning</strong> theme and here is a <a href="#">link</a>.</p>
+    </div>
+    <div class="slds-box slds-theme--error">
+      <p>This is a
+        <strong>error</strong> theme and here is a <a href="#">link</a>.</p>
+    </div>
+    <div class="slds-box slds-theme--offline">
+      <p>This is an
+        <strong>offline</strong> theme and here is a <a href="#">link</a>.</p>
+    </div>
+    <div class="slds-box slds-box slds-theme--shade slds-theme--alert-texture">
+      <p>This theme has the
+        <strong>alert texture</strong> theme added to the shade them and has a <a href="#">link</a>.</p>
+    </div>
+  </div>
+  </body>
+</apex:page>

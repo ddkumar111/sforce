@@ -1,0 +1,36 @@
+<apex:page controller="Account_Contact"  sidebar="false">
+    
+  <apex:pageBlock >
+           
+           
+          <font color="WHITE"><marquee direction="left" style="background:RED">SimplyForce Company  </marquee></font>
+          <font color="WHITE"><marquee direction="right" style="background:GREEN">Deepak    Kumawat  </marquee></font>
+           <p> Full Details  </p>
+           
+           
+        
+           <apex:pageBlockSection title="Account_Display">
+              <apex:outputField value="{!acc.Name}"/>
+              <apex:outputField value="{!acc.NumberOfEmployees}"/>
+              <apex:outputField value="{!acc.Fax}"/>
+           </apex:pageBlockSection>
+           
+           <apex:pageBlockSection title="Contact_Display">
+              <apex:outputField value="{!conts.AssistantName}"/>
+              <apex:outputField value="{!conts.AssistantPhone}"/>           
+              <apex:outputField value="{!conts.Department}"/>
+               <apex:outputField value="{!conts.LastName}"/>    
+           </apex:pageBlockSection>
+   
+           
+           
+           
+           
+           
+            
+ </apex:pageBlock>
+ 
+   <c:recordDisplay >
+   </c:recordDisplay>
+ 
+</apex:page>

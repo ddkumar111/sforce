@@ -1,0 +1,160 @@
+<!-- Page Display the Contact record in the Table with page Bolck and With Apex Repeat Compoment -->
+<apex:page controller="ContactData" id="page">
+    
+    <!-- Style for the Arrow sign that is used in the Address Information Block -->
+    <style>
+        .signStyle {
+            margin-left: 60px;
+            margin-top: 50px;
+            cursor:pointer;
+            color: red;
+            height: 58%;
+        }
+    </style>
+    
+    
+    <!-- Contact Information Block -->
+    <marquee direction="down" behavior="alternate" height="70"><marquee behavior="alternate" ><font size="5"><h1 style="margin-left:30px;" onmouseover="style.color='red'" onmouseout="style.color='blue'">{!$User.FirstName}  {!$User.LastName}</h1></font></marquee></marquee>
+    <apex:pageBlock title="Contact Information"  >
+        <apex:pageBlockTable value="{!displayData}" var="data">
+          
+        <!-- Add the column in the Table  -->
+        <apex:column headerValue="Department Name">
+        <apex:outputText value="{!data.Department}" />
+        </apex:column>
+        <apex:column value="{!data.Description }"/>
+        <apex:column value="{!data.Birthdate}"/>
+        <apex:column value="{!data.Name }"/>
+        <apex:column value="{!data.MailingCity}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+ 
+    <!-- Add the Table With Apex Repeat Compoment -->
+    <apex:pageBlock title="Contact Information" id="pageRend">
+        <apex:pageBlockSection columns="1" >
+        <apex:outputPanel id="pageRend">
+        <table class="list" width="100%" border="0" cellpadding="0" cellspacing = "0" style="margin-top: -15px; margin-left: -10px;">
+            <colgroup span="5"></colgroup>
+            <thead >
+            <tr class="headerRow">
+                <th class="headerRow" scope="col" colspan="1">Department Name</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <th class="headerRow" scope="col" colspan="1">Description </th>&nbsp;&nbsp;&nbsp;&nbsp;
+                <th class="headerRow" scope="col" colspan="1">Birthdate</th>&nbsp;&nbsp;&nbsp;&nbsp;
+                <th class="headerRow" scope="col" colspan="1">Name </th>&nbsp;&nbsp;&nbsp;
+                <th class="headerRow" scope="col" colspan="1">MailingCity</th>
+            </tr>    
+            </thead>
+            <tbody>
+            <apex:repeat value="{!displayData}" var="data1" >
+            <tr class="dataRow even  first">
+                <td class="dataCell" colspan="1">{!data1.Department}</td>
+                <td class="dataCell" colspan="1">{!data1.Description }</td>
+                <td class="dataCell" colspan="1">{!data1.Birthdate}</td>
+                <td class="dataCell" colspan="1">{!data1.Name }</td>
+                <td class="dataCell" colspan="1">{!data1.MailingCity}</td>
+            </tr>
+            </apex:repeat>
+            </tbody>    
+        </table>
+        </apex:outputPanel>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+    <!-- Contact Information Block -->
+    <apex:form > 
+        <apex:pageBlock title="Contact Information" >
+        <apex:pageBlockButtons location="bottom">
+            <apex:commandButton value="Save"  action="{!save}" rerender="pageRend" onclick="alert('Are U Sure');" />
+        </apex:pageBlockButtons>
+        
+        <apex:pageBlockSection >
+        <apex:inputField value="{!contact.Department}"/>
+        <apex:inputField value="{!contact.Description}" />
+        <apex:inputField value="{!contact.Birthdate}"/>
+        <apex:inputField value="{!contact.MailingCity}"/>
+        <apex:inputField value="{!contact.LastName}"/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form> 
+    
+    <!-- Description Information Block -->
+    <apex:form id="pgf">
+    <apex:pageBlock title="Description Information">
+        <apex:pageBlockSection >
+            <apex:inputField style="width:300px;height:100px" value="{!contact.Description}" />
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockButtons >
+        <button onclick="myFunction()" src="<generatedId>/myResourceImage" location="bottom"></button>
+        <p id="demo"></p>
+        <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "{!contact.Description}";
+        }
+        </script>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    <apex:outputLabel value="{!contact.Description}" style="text-align:right;"></apex:outputLabel>
+    
+    <!-- Address Information Block -->
+    <apex:pageBlock title="Address Information" id="pb">
+        <table>
+            <tr>
+                
+                <!-- Frist column for mailing Adderss -->
+                <td>
+                   <apex:pageBlockSection columns="1" id="pbs">
+                   <table width="45%"> 
+                       <tr>
+                           <td> <apex:inputField id="b0" value="{!contact.MailingStreet}" /> </td>
+                           <td> <apex:inputField id="b1" value="{!contact.MailingCity}"  /> </td>
+                           <td> <apex:inputField id="b2" value="{!contact.MailingState}" /> </td>
+                           <td> <apex:inputText id="b3" value="{!contact.MailingPostalCode}" onkeypress="if(this.value.match(/\D/)) this.value=this.value.replace(/\D/g,'')"
+                                                                              onkeyup="if(this.value.match(/\D/)) this.value=this.value.replace(/\D/g,'')" maxlength="5" /> </td>
+                           <td> <apex:inputField id="b4" value="{!contact.MailingCountry}" /> </td>
+                       </tr>
+                   </table> 
+                   </apex:pageBlockSection>
+                </td>        
+                
+                <!-- Second column for Arrow sign image -->
+                <td>
+                    <table width="10%">
+                        <td> <apex:image id="imageId"  value="{!$Resource.myResourceImage}" styleClass="signStyle" onclick="addressCopy('{!$Component.page:pgf:pb:pbs:b0}', '{!$Component.page:pgf:pb:pbs:b1}', '{!$Component.page:pgf:pb:pbs:b2}', '{!$Component.page:pgf:pb:pbs:b3}', '{!$Component.page:pgf:pb:pbs:b4}', '{!$Component.page:pgf:pb:pbss:s0}', '{!$Component.page:pgf:pb:pbss:s1}', '{!$Component.page:pgf:pb:pbss:s2}', '{!$Component.page:pgf:pb:pbss:s3}', '{!$Component.page:pgf:pb:pbss:s4}');" width="70" height="70" /> </td>
+                    </table>
+                </td>
+                
+                <!-- Third column for Other Address -->
+                <td>
+                    <apex:pageBlockSection columns="1" id="pbss">
+                    <table width="45%" style="margin-left: 90px;">
+                        <tr>
+                            <td> <apex:inputField id="s0" value="{!contact.OtherStreet}" /> </td>
+                            <td> <apex:inputField id="s1" value="{!contact.OtherCity}" /> </td>
+                            <td> <apex:inputField id="s2" value="{!contact.OtherState}" /> </td>
+                            <td> <apex:inputField id="s3" value="{!contact.OtherPostalCode}" /> </td>
+                            <td> <apex:inputField id="s4" value="{!contact.OtherCountry}" /> </td>
+                        </tr>
+                    </table>
+                    </apex:pageBlockSection>
+                </td>        
+            </tr> 
+        </table>    
+        
+        <!-- Script for addresscopy function -->    
+        <script type="text/javascript">
+        function addressCopy(b0, b1, b2, b3, b4, s0, s1, s2, s3, s4) {
+            // Copy mailing fields to other fields
+            document.getElementById(s0).value = document.getElementById(b0).value;
+            document.getElementById(s1).value = document.getElementById(b1).value;
+            document.getElementById(s2).value = document.getElementById(b2).value;
+            document.getElementById(s3).value = document.getElementById(b3).value;
+            document.getElementById(s4).value = document.getElementById(b4).value;
+            // No form submission
+            return false;
+        }
+        </script>
+<!--        </apex:pageBlockSection> -->
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page >
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+
+    <head>
+      
+      <title>Salesforce Lightning Design System Trailhead Module</title>
+      <apex:stylesheet value="{!URLFOR($Resource.SLDS0121, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    
+    </head>
+    
+    <body> 
+        <div class="slds">
+            <div class="slds-text-body--regular">RajKumar , Simplyforce Limited Company , Jaipur, Rajasthan .</div>
+            <div class="slds-text-body--small">RajKumar , Simplyforce Limited Company , Jaipur, Rajasthan ..</div>
+            <div class="slds-text-body--large">RajKumar , Simplyforce Limited Company , Jaipur, Rajasthan .</div>
+            <div class="slds-text-heading--large"> RajKumar , Simplyforce Limited Company , Jaipur, Rajasthan . </div>
+            <div class="slds-text-align--left">RajKumar , Simplyforce Limited Company , Jaipur, Rajasthan ..</div>
+            <div class="slds-text-align--center">RajKumar , Simplyforce Limited Company , Jaipur, Rajasthan .</div>
+            <div class="slds-text-align--right">RajKumar , Simplyforce Limited Company , Jaipur, Rajasthan ..</div>
+            
+        </div>
+    </body>
+    </html>   
+</apex:page>

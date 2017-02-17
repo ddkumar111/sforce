@@ -1,0 +1,58 @@
+<apex:page showHeader="false" sidebar="false">
+  
+    <head>
+        <meta charset="UTF-8"/>
+        <title>jQuery Simple Mobile Menu Plugin Demo</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
+        
+        <!-- Bootstrap -->
+        <apex:stylesheet value="{!URLFOR($Resource.MobileViewResourse, 'css/simpleMobileMenu.css')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.MobileViewResourse, 'css/ionicons.min.css')}"/>
+        
+    </head>
+<body>
+    
+    <header class="cf">
+        <div class="logo">logo</div>
+        <div class="navigation">
+            <nav>
+                <a href="javascript:void(0)" class="smobitrigger ion-navicon-round"><span>Menu</span></a>
+                <ul class="mobimenu">
+                    <li><a id="menuId" href="#"> Menu</a></li>
+                    <li><a href=""> Log In</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="menu">
+        <p> this div is used for the  linear the paragraph linewar linnees usedd. </p>
+        
+    </div>
+
+
+    <apex:includeScript value="{!URLFOR($Resource.MobileViewResourse, 'js/jquery.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.MobileViewResourse, 'js/simpleMobileMenu.js')}"/>
+    
+    <script type="text/javascript">
+
+        jQuery(document).ready(function($) {
+            $('#menu').hide();
+            $('.smobitrigger').smplmnu();
+            
+            $("#menuId").on("click", function () {
+                $('#menu').show();
+            
+            });
+        });
+        
+        
+        
+    </script>
+    
+</body>
+</apex:page>

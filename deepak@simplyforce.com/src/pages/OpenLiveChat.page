@@ -1,0 +1,28 @@
+<apex:page sidebar="false" showHeader="false" id="pg">
+  
+<apex:pageBlock >
+
+    <button class="buttonCls" type="button" onclick="popupCenter();">Live Chat</button>
+
+</apex:pageBlock> 
+  
+
+<!-- Add the script  -->
+    
+<script>
+ 
+function popupCenter() {
+
+var w = screen.width; 
+w= w/2; 
+var h = screen.height; 
+h=h/2; 
+
+var mW = window.open('/apex/LiveChatPopUp', '',"width=600,height=450,scrollbars=yes"); 
+mW.moveTo(w-310 , h-200); 
+
+}
+
+
+</script>      
+</apex:page>

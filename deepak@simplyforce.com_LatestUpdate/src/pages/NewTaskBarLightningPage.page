@@ -1,0 +1,5 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false">
+    
+    <c:NewTaskBarComponent />
+
+</apex:page>

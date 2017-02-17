@@ -1,0 +1,21 @@
+<apex:page controller="NestedSaveForSchoolAndStudent" sidebar="false">
+    <apex:form >
+    <apex:pageBlock mode="Edit" id="de" >
+    	<apex:pageBlockButtons >
+    	
+        <apex:commandButton value="Save Student-Schools" action="{!doSave}" reRender="de" />
+        </apex:pageBlockButtons>
+        //Block Section of Students Fields    
+        <apex:pageBlockSection title="Student Fields" collapsible="false" >
+            <apex:inputField value="{!student.Name}" />
+            <apex:inputField value="{!student.Total_Attendence__c}" />
+        </apex:pageBlockSection>
+        //Block Section od School Fields
+    	<apex:pageBlockSection title="School Fields" columns="2" collapsible="false">
+		    <apex:inputField value="{!school.Name}" required="true"/>
+		    <apex:inputField value="{!school.Est_year__c}" required="true"/>
+		    <apex:inputField value="{!school.Principal_Name__c}" required="true"/>
+		</apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

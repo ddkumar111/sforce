@@ -1,0 +1,20 @@
+<apex:page sidebar="false"    >
+
+   <apex:pageBlock title=" The School">
+   <apex:pageBlockSection title="Faculty Department">
+   
+   
+ <p> <font size="3" color="red">  Deeepak </font></p>
+  
+   
+    <p> This is faculty section.</P>
+   </apex:pageBlockSection>
+   <apex:pageBlockSection title=" Student Department">
+   
+   This is student section.
+   
+   </apex:pageBlockSection>
+   
+   </apex:pageBlock>
+  
+</apex:page>

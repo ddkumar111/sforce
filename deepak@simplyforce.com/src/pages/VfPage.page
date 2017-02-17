@@ -1,0 +1,11 @@
+<apex:page standardController="Account"  showChat="true">
+  <apex:form >
+  <apex:pageBlock title="deepl">
+      <apex:detail relatedListHover="false" showChatter="true"/>
+      <apex:pageblockButtons >
+          <apex:commandButton action="{!edit}" value="edit"/>
+      </apex:pageblockButtons>
+  </apex:pageBlock>
+  </apex:form>
+  
+</apex:page>

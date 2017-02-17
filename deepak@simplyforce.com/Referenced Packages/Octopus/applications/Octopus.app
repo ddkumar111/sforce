@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-home</defaultLandingTab>
+    <description>Know your Salesforce Instance</description>
+    <label>Octopus</label>
+    <tab>Octopus</tab>
+    <tab>SFAuraCMP__LightApp</tab>
+    <tab>SFAuraCMP__Light</tab>
+    <tab>SFAuraCMP__LPAge</tab>
+    <tab>SFAuraCMP__NewPageLightning</tab>
+    <tab>SFAuraCMP__LightPage</tab>
+    <tab>SFAuraCMP__Account_Record</tab>
+</CustomApplication>

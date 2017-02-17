@@ -1,0 +1,60 @@
+<apex:page >
+    <style>
+        .slds-avatar {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: $border-radius-medium;
+  line-height: $line-height-reset;
+  }
+
+  .slds-avatar--x-small {
+    @include square($square-icon-small-boundary);
+  }
+
+  .slds-avatar--small {
+    @include square($square-icon-medium-boundary-alt);
+  }
+
+  .slds-avatar--medium {
+    @include square($square-icon-large-boundary);
+  }
+
+  .slds-avatar--large {
+    @include square($square-icon-large-boundary-alt);
+  }
+
+  .slds-avatar--circle {
+    border-radius: $border-radius-circle;
+  
+}
+    
+    </style>
+  <apex:form >
+      
+      
+      
+      
+     <span class="slds-avatar slds-avatar--x-small">
+  <img src="{!URLFOR($Resource.LMSFile,'img/Gray_user_profile_icon.png')}" />
+</span>
+<span class="slds-avatar slds-avatar--small">
+  <img src="{!URLFOR($Resource.LMSFile,'img/Gray_user_profile_icon.png')}" />
+</span>
+<span class="slds-avatar slds-avatar--medium">
+  <img src="{!URLFOR($Resource.LMSFile,'img/Gray_user_profile_icon.png')}" />
+</span>
+<span class="slds-avatar slds-avatar--large">
+  <img src="{!URLFOR($Resource.LMSFile,'img/Gray_user_profile_icon.png')}" />
+</span>
+<span class="slds-avatar slds-avatar--circle slds-avatar--x-small">
+  <img src="{!URLFOR($Resource.LMSFile,'img/Gray_user_profile_icon.png')}" />
+</span>
+<span class="slds-avatar slds-avatar--circle slds-avatar--small">
+  <img src="{!URLFOR($Resource.LMSFile,'img/Gray_user_profile_icon.png')}" />
+</span>
+
+  
+  
+  </apex:form>
+</apex:page>

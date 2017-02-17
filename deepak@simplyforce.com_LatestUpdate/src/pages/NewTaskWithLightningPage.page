@@ -1,0 +1,779 @@
+<apex:page controller="NewTaskCreatedController" standardStylesheets="false" showHeader="false" sidebar="false" id="pg">
+<apex:form id="form"> 
+  <head>
+      
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+   <!-- Bootstrap core CSS -->
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS0121, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.LightningResourse, 'css/bootstrap.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.LightningResourse, 'css/jquery.smartmenus.bootstrap.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.LightningResourse, 'css/jquery-ui.css')}"/>
+    
+    
+    <style>
+        
+      .navbar.navbar-default  { 
+          background: linear-gradient(to bottom,#92BDE6 40%,#4C8CBF 100%);
+      }
+      .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {     
+           background: transparent;
+      }
+      .navbar-default .navbar-nav>li>a {
+          color: #333435;
+          font-weight: 600;
+          font-size: 14px;
+          font-family: serif,Arial,Helvetica;
+      }
+      li#taskValue a {
+          padding-bottom: 2px;
+      } 
+      .navbar-default .navbar-nav>li {
+          border-right: #487ca9 solid 1px;
+          border-left: #90bfe5 solid 1px;
+      }
+      .navbar {
+          min-height: 80px;
+      }
+      .navbar-header {
+          min-height: 80px;   
+      }
+     .navBrandSpan {
+         color: #A03613;
+         font-size: 32px;
+         font-weight: 700;
+         padding-top: 10px;
+         margin-top: 12px !important;
+         float: left;
+     }
+     img { 
+         padding: 0px 9px;
+     }
+    .statusSpan {
+        background: #4887be;
+        cursor: pointer;
+        color: #FFFFFF;
+        padding: 3px 3px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        font-weight: bold;
+        overflow: hidden;
+        display: block;
+     }
+    li#taskValue:hover  , li#actionValue:hover , li#miscValue:hover {
+        background: #4887be;
+        color: #FFF !important;
+        font-weight: normal;
+            
+    }
+    li#taskValue:hover .navbar-nav>li>a {
+        color: #333435 !important;
+    }
+    
+    
+    .navbar-default .navbar-brand{
+        font-size:16px;
+        color:#333435;
+        font-family: serif,Arial,Helvetica;
+        font-weight: 600;  
+        float: left;
+        width: 327px; 
+    }
+    .navbar-default .navbar-brand:hover { 
+        color:#333435;
+        
+    }
+        
+        .taskSubjectLabel {
+                color:white;
+                font-size:bold;
+
+            }
+            .task-icon {
+                width: 24px;
+                height: 18px;
+                display: inline-block;
+                background-color: rgba(0, 0, 0, 0);
+                background-position: 0px;
+                background-repeat: no-repeat;
+                text-indent: -99999px;
+                overflow: hidden;
+                background-image: url('images/task-icon.png') !important;
+            }
+            .relatedToDiv {
+                clear: both;
+                  background-color: #2269a1;
+            }
+            .taskTypeDiv {
+                width:auto;
+                text-align:center;
+                border-right: #487ca9 solid 1px;
+                padding-left: 15px;
+            }
+            .relatedToDiv {
+                cursor:pointer;
+                font-family:arial;
+                float:left;
+                color:white;
+                font-size:16px;
+            }
+            .taskDaysDiv {
+                cursor: pointer;
+                float: left;
+                background-color: #568bb7;
+                padding: 3px 7px 3px 7px;
+            }
+            #bottom-inner-first #span1 {
+              color: #fff;
+              font-size: 20px;
+              font-weight: bold;
+            }
+            .taskDaysDiv #bottom-inner-first strong {
+              font-size: 20px;
+              line-height: 20px;
+              font-weight: bold;
+              display: block;
+              }
+            .taskDaysDiv .dateSettings {
+              float: left;
+              font: 16px bold;
+              color: #FFFFFF;
+              margin-top: -1px;
+              }
+              .status_title label {
+                  color: #084677;
+                  text-transform: none;
+                  font-family: arial;
+                  font-size: 18px;
+                }
+                .combo-wrapper .taskStatus-box {
+                    padding: 0 5px;
+                    position: relative;
+                }
+
+                .div_separator {
+                  border-top: #487ca9 solid 1px;
+                  border-bottom: #90bfe5 solid 1px;
+                  width: 228px;
+                  clear: both;
+                  margin-left: -16px;
+                }
+                .relatedTasksLeft, .relatedTasksRight {
+                  float: left;
+                  width: 95px;
+                }
+                .relatedLinks {
+                  font-size: 16px;
+                  border-collapse: collapse;
+                }
+                .colum-background {
+                  border-right: #487ca9 solid 1px;
+                  border-left: #90bfe5 solid 1px;
+                  background: url(../img/taskNewScreen/newImage/im-background.png);
+                  background-position: center;
+                  background-size: cover;
+                  color: #0c0c0a;
+                  font-weight: normal;
+                  text-align: center;
+                }
+                .task-related li:nth-child(1) {
+                    color: #ffffff;
+                    background-image: linear-gradient(to bottom, #ef5402 0%, #d23f2f 100%);
+                }
+                .relatedTasksLeft li {
+                  margin-left: 0px !important;
+                }
+                .task-related li {
+                  float: left;
+                  text-align: center;
+                  padding: 2px 6px;
+                  margin-left: 1px;
+                  font-size: 14px;
+                  width: 38px;
+                  list-style:none;
+                }
+                .task-related li:nth-child(2) {
+                    color: #0c0c0a;
+                    background-image: linear-gradient(to bottom, #f9e65b 0%, #edca52 100%);
+                }
+                .task-related li:nth-child(3) {
+                  background: #a4cf6c !important;
+                }
+                .task-related li:nth-child(4) {
+                  background: #f4f2f2 !important;
+                }
+                .relatedTasksRight ul li:nth-child(1)::before {
+                  border-right: 8px solid transparent;
+                  content: '';
+                  height: 0;
+                  right: 83px;
+                  width: 0;
+                  position: absolute;
+                }
+                .relatedTasksRight ul li:nth-child(2)::before {
+                  border-right: 8px solid transparent;
+                  content: '';
+                  height: 0;
+                  right: 44px;
+                  width: 0;
+                  position: absolute;
+                }
+                .relatedTasksRight ul li:nth-child(3)::before {
+                  border-right: 8px solid transparent;
+                  content: '';
+                  height: 0;
+                  right: 83px;
+                  width: 0;
+                  position: absolute;
+                }
+                .relatedTasksRight ul li:nth-child(4)::before {
+                  border-right: 8px solid transparent;
+                  content: '';
+                  height: 0;
+                  right: 44px;
+                  width: 0;
+                  position: absolute;
+                }        
+                        
+        
+        .textfield {display:inline;}
+        
+        
+        .max-content{     
+            max-width: 100px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        
+    #selectStatus {
+        background: #4887be;    
+        
+    }
+        
+    @media (max-width: 768px) {
+        
+        .navbar-default .navbar-nav>li {
+            border-bottom: #487ca9 solid 1px;
+            border-top: #90bfe5 solid 1px;
+        }   
+        .navbar-default .navbar-collapse {
+            border-color: #85AACB;  
+        }
+        .statusCls {
+            padding-bottom: 10px;   
+        }
+        .relatedTasksRight ul li {
+            border: 0px;    
+        }
+        .navbar-default .navbar-nav>li {
+            border-right: 0px;
+            border-left: 0px;
+            float: left;
+            width: 100%;
+        }
+        
+        
+        
+        li.taskValue > a {
+            margin-bottom: 14px !important;
+            float: left;
+            width: 100%;    
+            
+        }
+        
+        .navbar-default .navbar-toggle {
+            border-color: #5F8496;
+            margin-top: 18px;
+            margin-right: 30px;
+        }
+        .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+            background-color: transparent;
+        
+        }
+        .slds .slds-form-element__label {
+            padding-left: 10px;
+        }
+        
+    }
+        
+    .navbar-default .navbar-nav>li:last-child {
+        border-right: none; 
+    }
+    
+    
+    @media (min-width: 768px) {
+        li#taskValue , li.statusCls , li#submitValue ,  li#fileValue , li#actionValue , li#miscValue , li.taskValue , li#saveValue , li#closeValue {
+            min-height: 103px !important; 
+        }
+        
+        .navbar-nav>li>a{ 
+            border-bottom: 0px !important; 
+        }
+        .slds .slds-form-element__label {
+            padding-left: 26px;
+        }
+        .slds .slds-select_container .slds-select {
+            padding-left: 4px;
+            padding-right: 15px;
+        
+        }
+        
+        .slds-select_container {
+            margin: 0px 6px;
+        
+        }
+        
+          
+        li#taskValue > ul.dropdown-menu {
+            position: absolute !important;
+            width: 213px !important;
+            white-space: nowrap !important;
+            left: -52px !important;
+            min-width: 212px !important;
+            background: #4887be; 
+            font-size: 13px;
+        }
+        li#taskValue > ul.dropdown-menu li {
+            float: left;
+            background: #4887be;
+            
+        }
+        
+        li#actionValue > ul.dropdown-menu {
+            position: absolute !important;
+            width: 325px !important;
+            white-space: nowrap !important;
+            left: -150px !important;
+            min-width: 212px !important;
+            background: #4887be; 
+            font-size: 13px;
+        }
+        
+        li#actionValue > ul.dropdown-menu li {
+            float: left;
+            background: #4887be;
+            
+            
+        }
+        
+        li#miscValue > ul.dropdown-menu {
+            position: absolute !important;
+            width: 814px !important;
+            white-space: nowrap !important;
+            left: -475px !important;
+            min-width: 212px !important;
+            background: #4887be; 
+            font-size: 13px;
+        }
+        
+        li#miscValue > ul.dropdown-menu li {
+            float: left;
+            background: #4887be;
+            max-width: 27%;
+            border-right: #3a6d9a solid 1px;
+            border-left: #90bfe5 solid 1px;
+            
+        }
+        ul.dropdown-menu {
+            padding: 0px; 
+            border: none;   
+        }
+    
+        
+    
+
+        
+        
+        #taskValue:hover > .dropdown-menu , #actionValue:hover > .dropdown-menu , #miscValue:hover > .dropdown-menu  {
+            display: block;
+            color: #fff !important; 
+        }
+        
+        #taskValue:hover > .dropdown-menu > li > a , #actionValue:hover > .dropdown-menu > li > a  {
+            color: #fff !important;
+            
+            
+        }
+        #miscValue:hover > .dropdown-menu > li > a  {
+            color: #fff;
+            font-weight:600;    
+        }
+        
+        .taskSubValue {
+            color: #fff; 
+            font-weight: 600; 
+        
+        }
+        li#taskValue {
+            max-width: 98px;
+            padding: 3px 9px;
+            
+        }
+        
+        
+        
+    }
+        li#taskValue > ul.dropdown-menu>li>a:focus , li#taskValue > ul.dropdown-menu>li>a:hover, 
+        li#actionValue > ul.dropdown-menu>li>a:focus , li#actionValue > ul.dropdown-menu>li>a:hover  {
+            background: linear-gradient(to bottom,#92BDE6 40%,#4C8CBF 100%);
+            color: #fff;
+        
+        }
+        
+        li#miscValue > ul.dropdown-menu>li>a:focus , li#miscValue > ul.dropdown-menu>li>a:hover {
+            background: #4887be;
+            color: #fff;
+            
+        }
+        .nav>li>a {
+            padding: 10px 10px;
+        }
+    
+        .slds a:hover, .slds a:focus {
+            text-decoration: none;
+        }
+        .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover , .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+            color: #fff;
+        
+        }
+        
+        .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover ul.dropdown-menu li a {
+            color: #fff;
+        }
+        
+        .relatedTasksRight {
+            float: none !important;
+        }
+        
+        .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+            color: #fff;
+        }
+        
+        html{ 
+            overflow: visible !important;
+        }
+        .navbar-default .navbar-nav>li>a {
+            cursor: 
+        }
+        ul.nav.navbar-nav {
+            float: right;
+        }
+        
+        .slds .slds-form-element__label {
+            margin-top: 9px;
+            color: #333435;
+            font-size: 15px;
+            font-family: serif,Arial,Helvetica;
+
+          }
+         .slds .slds-select { 
+            background-color: #337ab7;
+
+        } 
+          
+        .slds .slds-select:focus, .slds .slds-select:active {
+            background-color: #337ab7;
+        
+        }  
+        select#selectSample1 {
+            color: #fff;
+            border: none;
+        }
+        .navbar-brand{}
+        .date1 , .date2 {
+            font-size: 13px;
+        }
+        
+        .date1 img , .date2 img {
+            cursor: pointer;
+        
+        }
+        @media (max-width: 439px) {
+             .navbar-brand {
+                 margin-top: -46px;
+                 margin-top: 13px;
+                 margin-right: 11px;
+             }
+             .navbar-default .navbar-toggle {
+                 margin-right: 1px;
+             
+             }
+             .navBrandSpan {
+                 font-size: 24px;
+             }
+             .timecls {
+                 width: 128px !important;
+             
+             }
+             #editableDiv {
+                 font-size: 14px;  
+             }
+             .navbar-header {
+                 min-height: 92px;
+             }
+             
+        }
+        @media (max-width: 449px) {
+             .navbar-brand {
+                 margin-top: -44px;
+             }
+        }
+        
+        @media (min-width: 768px) and (max-width: 991px) {
+            
+            ul.nav.navbar-nav li {
+            max-width: 84px;
+            border-top: 1px solid #74A3CC;
+            text-align: center;
+            }
+        
+            li.statusCls {
+                max-width: 105px !important;
+            }
+            .slds .slds-select_container .slds-select {
+                padding-left: 0px;
+            }
+            
+            .container {
+                width: 781px;
+                padding-left: 0px;
+            }
+            
+            li#taskValue {
+                border-left: none;
+            
+            }
+            
+            .task-related li {
+                width: 30px;
+            }
+            
+            
+            
+        
+        }
+        
+             @media only screen and (min-width: 992px) and (max-width: 1199px) {
+                 ul.nav.navbar-nav li {
+                    min-width: 94px;
+                    border-top: 1px solid #74A3CC;
+                    text-align: center;
+                 } 
+                 li#taskValue {
+                     border-left: none;
+                 }   
+                 
+                 .task-related li {
+                     min-width: 41px !important;
+                 }
+                 
+                 li#actionValue > ul.dropdown-menu { 
+                     min-width: 339px !important;
+                 }
+                 
+                 li#taskValue > ul.dropdown-menu {
+                     min-width: 282px !important;
+                     left: -17px !important;
+                 }
+                 
+            }
+        
+        
+    </style>
+    
+    
+    
+</head>
+
+
+<body>
+    <div class="slds">
+        <div class="container">        
+            <div class="slds-form-element">
+            <div class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    
+                    <!-- <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-text-default">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#announcement"></use>
+                    </svg> --->
+                    </button>
+                    <div class="navbar-brand"> TASK:<span id="editableDiv" contenteditable="true"> Confirm all checks received </span>
+                        <p class="navBrandSpan" > DUE: 0 DAYS </p> 
+                         <div  class="timecls"  style="float: right;width: 98px;color: #fff;padding-left: 3px;padding-top: 3px;"><span class="date1"><input type='hidden' id='txtDate' />
+                         <apex:outputField id="taskdate" value="{!taskList[0].ActivityDate}" />  </span> 
+                         <span class="date2"><img  id="txtDate" src="{!URLFOR($Resource.LightningResourse, 'image/clock-icon.png')}" alt="Sumit_icon" /> 03.20 PM </span>
+                         </div>
+                    </div>
+                </div>
+            <div class="navbar-collapse collapse">
+
+            <!-- Left nav -->
+            <ul class="nav navbar-nav">
+                <li id="taskValue" class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> TASKED </a>
+                    <span class="taskSubValue"> Accounting <br/> <apex:outputField value="{!taskList[0].Who.Name}" /> </span> 
+                    <ul class="dropdown-menu">
+                        <li><a href="#"> AJI</a></li>
+                        <li><a href="#"> Elite </a>
+                            
+                            <ul class="dropdown-menu">
+                                <li><a href="#"> AJI</a></li>
+                                <li><a href="#"> Elite </a></li>
+                                <li><a href="#"> Others </a></li>
+                                <li><a href="#"> Others Data </a> </li>
+                            </ul>
+                            
+                            
+                        </li>
+                        <li><a href="#"> Others </a></li>
+                    </ul>
+                </li>
+                <li class="statusCls">
+                    <div class="slds-form-element">
+                      <label class="slds-form-element__label" for="selectSample1"> STATUS </label>
+                      <div class="slds-form-element__control">
+                        <div class="slds-select_container">
+                         <select id="selectSample1" class="slds-select">
+                            <option> New </option>
+                            <option> In Progress </option>
+                            <option> Completed </option>
+                            <option>Cancelled</option>  
+                            <option>Not Required</option>
+                            <option>Correction </option>
+                            <option> Approval  </option>
+                            <option> No Answer </option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                </li>                            
+                <li id="submitValue"><a href="#"> SUBMIT </a>  <img src="{!URLFOR($Resource.LightningResourse, 'image/submit-icon.png')}" alt="Sumit_icon" />  </li>
+                <li id="fileValue"> <a href="#">FILES(0) </a> <img src="{!URLFOR($Resource.LightningResourse, 'image/files-icon.png')}" alt="File_icon" />  </li>                                        
+                <li id="actionValue" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> ACTIONS  <br/> <img  style="padding-top: 10px;" src="{!URLFOR($Resource.LightningResourse, 'image/new-action-icon.png')}" alt="Action_icon" /> </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"> Related Contacts </a></li>
+                        <li><a href="#"> My Teams </a></li>
+                        <li><a href="#"> Others </a></li>
+                    </ul>
+                </li>                                                                                
+                <li id="miscValue" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">MISC  <br/> <img style="padding-top: 10px;" src="{!URLFOR($Resource.LightningResourse, 'image/new-misc-icon.png')}" alt="Misc_icon" />  </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"> ASSIGNED  </a></li>
+                        <li><a href="#"> COMPLETED </a></li>
+                        <li><a href="#"> COMPLETED IN </a></li>
+                        <li><a href="#"> NOTIFICATION ,APPROVAL &amp; PRIORITY </a></li>
+                        <li><a href="#"> RECURRING </a> </li>
+                        <li style="border: none;"><a href="#" > NOTES </a> </li>
+                    </ul>
+                </li>
+                <li class="taskValue"> <a href="#" style="margin-bottom: -18px; "> TASKS 
+                    <div class="relatedTasksRight">
+                        <div class="relatedLinks" style="margin-top:5px;">
+                            <ul class="task-related" style="float: left;margin-left: 5px;">
+                                <li flag="red" style="cursor:pointer">0</li>
+                                <li flag="yellow" style="cursor:pointer">0</li>
+                                <li flag="green" style="cursor:pointer">0</li>
+                                <li flag="silver" style="cursor:pointer">0</li> 
+                            </ul>
+                        </div>
+                    </div> 
+                </a>
+                </li>                        
+                <li id="saveValue"><a href="#"> SAVE <br/> <img src="{!URLFOR($Resource.LightningResourse, 'image/new-save-icon.png')}" alt="Save_icon"  onclick="getRemoteTask()" /> </a></li>                                
+                <li id="closeValue"><a href="#"> <img src="{!URLFOR($Resource.LightningResourse, 'image/fadeout-icon.png')}" alt="Fadeout_icon" /> </a>  <a href="#" style="border-top: 1px solid #6695D0;"> <img src="{!URLFOR($Resource.LightningResourse, 'image/small-close-icon.png')}" alt="Small_icon" /> </a></li>
+            </ul>
+        </div>
+    </div>
+</div>    
+</div>
+</div>
+
+
+<apex:includeScript value="{!URLFOR($Resource.LightningResourse, 'js/jquery-1.11.3.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.LightningResourse, 'js/bootstrap.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.LightningResourse, 'js/jquery-ui.js')}"/>
+
+<script type="text/javascript">
+        function isLightningExperienceOrSalesforce1() {
+            return((typeof sforce != 'undefined') && sforce && (!!sforce.one));
+        }
+        
+        if( isLightningExperienceOrSalesforce1() ) {
+            
+           
+            console.log('### Lightning Experience');
+        } else {
+            console.log('### Salesforce Classic');
+        }
+    </script>
+
+
+<script>
+   
+   
+    function getRemoteTask() {
+        
+    function Task() {
+    
+        this.Id = null;
+        this.ActivityDate = null;
+    
+    }   
+     
+    
+      alert('deepaak calling ')
+        
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.NewTaskCreatedController.saveTaskData}',  
+            function(result, event){
+                
+                if (event.status) {
+                     // Get DOM IDs for HTML and Visualforce elements like this
+                     document.getElementById('pg:form:taskdate').innerHTML = result[0].ActivityDate;
+                 } 
+            });
+        console.log('task', result );
+    }  
+   
+   
+    $(document).ready(function(){
+    
+      alert('deepak calling After the Page Full Laoding');
+      var content_id = 'editableDiv';  
+      max = 33;
+      
+      $('#'+content_id).keyup(function(e){ check_charcount(content_id, max, e); });
+      $('#'+content_id).keydown(function(e){ check_charcount(content_id, max, e); });
+      
+      function check_charcount(content_id, max, e)
+      {   
+      
+          
+          if(e.which != 8 && $('#'+content_id).text().length > max)
+          {
+             // $('#'+content_id).text($('#'+content_id).text().substring(0, max));
+             e.preventDefault();
+          }
+      }
+      
+          $("#txtDate").datepicker({
+              showOn: 'button',
+              buttonText: 'Date',
+              buttonImageOnly: true,
+              buttonImage: '/resource/1454975443000/LightningResourse/image/due-cal-icon.png'
+          });
+      });
+      isLightningExperienceOrSalesforce1();
+</script>
+
+</body>
+</apex:form>
+</apex:page>

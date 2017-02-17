@@ -1,0 +1,10 @@
+<apex:page standardStylesheets="false" sidebar="false">
+<apex:includeScript value="/lightning/lightning.out.js" />
+ 
+  <script>
+        $Lightning.use("c:helloWorldApp", function() {
+            $Lightning.createComponent(
+                "c:helloWorld");
+            });
+    </script>
+</apex:page>

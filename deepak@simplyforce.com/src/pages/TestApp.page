@@ -1,0 +1,93 @@
+<apex:page >
+  <div class="container" >
+                            <div class="page-content">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h3> Contact Information </h3>
+                                        <form class="form-horizontal">
+                                          <div class="form-group">
+                                            <label for="inputName1" class="col-xs-2 control-label">Name:</label>
+                                            <div class="col-xs-10">
+                                              <input type="text" class="form-control" id="inputName1" placeholder="Name"/>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="inputDeparment" class="col-xs-2 control-label">Department:</label>
+                                            <div class="col-xs-10">
+                                              <input type="text" class="form-control" id="inputDeparment" placeholder="Department"/>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="inputEmail" class="col-xs-2 control-label">Email:</label>
+                                            <div class="col-xs-10">
+                                              <input type="Email" class="form-control" id="inputEmail" placeholder="Email"/>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="inputDescription" class="col-xs-2 control-label">Description:</label>
+                                            <div class="col-xs-10">
+                                              <input type="text" class="form-control" id="inputDescription" placeholder="Description"/>
+                                            </div>
+                                          </div>
+                                        </form> 
+                                    </div>
+                                    
+                                    <div class="col-sm-6">
+                                        <div class="row">
+                                            <h3> Picklist Values </h3>
+                                            <div class="col-sm-4">
+                                                <label>Industry </label>
+                                                <div class="stageSelectBox">
+                                                    <div class="stage-selection-box" style="position: relative;">
+                                                        <select value="industry" name="industry">
+                                                            <option value="-- None --">-- None -- </option>
+                                                            <option value="It">It</option>
+                                                            <option value="Bank">Bank</option>
+                                                            <option value="Arts">Arts</option>
+                                                        </select>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                                
+                                            <div class="col-sm-4">  
+                                                <label>Department </label>
+                                                <div class="stageSelectBox">
+                                                    <div class="stage-selection-box">
+                                                        <select value="department" name="department">
+                                                            <option value="-- None --">-- None -- </option>
+                                                            <option value="C">C</option>
+                                                            <option value="C++">C++</option>
+                                                            <option value="Java">Java</option>
+                                                            <option value="Finance">Finance</option>
+                                                            <option value="Account">Account</option>
+                                                            <option value="Political">Political</option>
+                                                            <option value="Geography">Geography</option>
+                                                        </select>   
+                                                    </div>          
+                                                </div>
+                                            </div>  
+                                        
+                                            <div class="col-sm-4">
+                                                <label> Role </label>
+                                                <div class="stageSelectBox">
+                                                    <div class="stage-selection-box">
+                                                        <select value="role" name="role">
+                                                            <option value="-- None --">-- None -- </option>
+                                                            <option value="Coder">Coder</option>
+                                                            <option value="Desingner">Desingner</option>
+                                                            <option value="C.A">C.A.</option>
+                                                            <option value="C.S.">C.S.</option>
+                                                            <option value="Leader">Leader</option>
+                                                            <option value="GATeacher">GATeacher</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>                          
+                                    
+                                        </div>
+                                    </div>          
+                                </div>
+                            </div>  
+                        </div>
+                       
+</apex:page>

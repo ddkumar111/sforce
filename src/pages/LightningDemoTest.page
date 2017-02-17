@@ -1,0 +1,26 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false">
+   
+    <!-- Include a JavaScript file in your Visualforce page -->
+    <apex:includeLightning />
+
+
+    <p id="pId"> Hello User  the this the lightning demo form  </p>
+    <div id="lightning" />
+
+    <script>
+    //Tell your Visualforce page to use ExposeVF Lightning app
+        
+        $Lightning.use("SFAuraCMP:LightningCompDemoApp", function() {
+          // Write a function that creates the component on the page
+          $Lightning.createComponent("SFAuraCMP:LightningCompDemo",
+          {},
+          "pId",
+          function(cmp) {
+            // do some stuff
+          
+        });
+        
+        });
+    </script>
+
+</apex:page>

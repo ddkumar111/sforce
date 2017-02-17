@@ -1,0 +1,64 @@
+<apex:page controller="AttachmentPopController" showHeader="false" sidebar="false" id="pg">
+    <apex:form id="pgForm">  
+        <style>
+        	.blockClass {
+        		padding-left: 12px;
+			    padding-top: 0px;
+			    line-height: 26px; 
+        	}
+        </style>
+        
+        <apex:sectionHeader title="Attach File" />  
+        <apex:pageBlock id="pg"> 
+        	<apex:pageMessages />
+            <apex:pageBlockSection columns="1" id="pbs">
+              <apex:InputHidden value="{!attachKey}" id="hiddenText"/> 
+                    
+                <apex:pageBlockSectionItem id="pbsItem">
+                    <apex:outputPanel id="opt">
+                        <strong>1. Select the File</strong> <br/>
+                        <div class="blockClass">
+	                        <span> Type the path of the file or click the Browse button to find the file.</span>  <br/>
+	                        <apex:inputFile value="{!document.body}" filename="{!document.name}" contentType="{!document.ContentType}" id="file" />
+                    		
+                    	</div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel >
+                        
+                        <strong>2. Click the "Attach File" button.</strong> <br/>
+                        <div class="blockClass">
+	                        <span> Repeat steps 1 and 2 to attach multiple files. </span> <br/>
+	                        <span> ( When the upload is complete the file information will appear below. ) </span> <br/>
+	                        <apex:commandButton action="{!uplaod}" value="Attach File" />
+                    	</div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>    
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection columns="1">
+                
+                    <apex:outputPanel >
+                        <strong>3. Click the Done button to return to the previous page.</strong> <br/>
+                        <div class="blockClass">
+	                        <span> ( This will cancel an in-progress upload. ) </span> <br/>
+	                        <apex:commandButton value="Done" onClick="closePopup();"/>
+                    	</div>
+                    </apex:outputPanel>
+               </apex:pageBlockSection>
+        
+        </apex:pageBlock>
+    </apex:form>
+ <script>
+ function closePopup() {
+ 
+ window.opener.getValueOfAttachKey({!attachKey});
+ window.close();
+ 
+ }
+ 
+ </script>
+    
+</apex:page>

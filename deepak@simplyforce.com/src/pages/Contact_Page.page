@@ -1,0 +1,41 @@
+<apex:page controller="Account_Contact"  sidebar="false">
+  <apex:form >
+      <apex:pageBlock >
+          
+          <font color="WHITE"><marquee direction="left" style="background:RED">SimplyForce Company  </marquee></font>
+          <font color="WHITE"><marquee direction="right" style="background:GREEN">Deepak    Kumawat  </marquee></font>
+           
+          
+          
+          <apex:pageBlockButtons >
+            <apex:commandButton value="Save Contact "  action="{!doSaveContact}" />
+            <apex:commandButton value="Previous_Account_Page"  action="{!Previous_Account}"/>
+            <apex:commandButton value="next to"  action="{!saveNext}"/>
+            
+          </apex:pageBlockButtons>
+        
+           <apex:pageBlockSection title="Account_Display">
+              <apex:outputField value="{!acc.Name}"/>
+              <apex:outputField value="{!acc.NumberOfEmployees}"/>
+              <apex:outputField value="{!acc.Fax}"/>
+           </apex:pageBlockSection>
+        
+        
+          <apex:pageBlockSection title="Contact_Infomation ">
+            <apex:inputField value="{!conts.AssistantName}"/>
+            <apex:inputField value="{!conts.AssistantPhone}"/>
+            <apex:inputField value="{!conts.Department}"/>
+            <apex:inputField value="{!conts.LastName}"/>
+          </apex:pageBlockSection>
+        
+           <apex:pageBlockSection title="Contact_Display">
+              <apex:outputField value="{!conts.AssistantName}"/>
+              <apex:outputField value="{!conts.AssistantPhone}"/>           
+              <apex:outputField value="{!conts.Department}"/>
+               <apex:outputField value="{!conts.LastName}"/>    
+           </apex:pageBlockSection>
+   
+        </apex:pageBlock>
+   </apex:form>
+   <c:recordDisplay ></c:recordDisplay>
+</apex:page>

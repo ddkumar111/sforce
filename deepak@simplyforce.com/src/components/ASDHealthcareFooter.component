@@ -1,0 +1,145 @@
+<!--
+/**
+ *  @Description    :   Footer for New ASDHealthcare App.
+ *
+ *  Created By      :   Bhavi Sharma(Simplyforce)
+ *
+ *  Created Date    :   08/24/2015
+ *
+ *  Revisoion Log   :   V_1.0 created
+**/
+-->
+<apex:component >
+    <style>
+        
+        .kentico-error.slide-out-div {
+		    border-color: #d00;
+		    color: #d00;
+		}
+		.slide-out-div {
+		    padding: 20px;
+		    width: 400px;
+		    background: #fff;
+		    border: 1px solid #29216d;
+		    z-index: 1041;
+		}
+		.handle { 
+			width: 20px;
+		    height: 126px;
+		    display: block;
+		    text-indent: -99999px;
+		    outline: none;
+		    position: absolute;
+		    top: -2px;
+		    right: -20px;
+		    background-image:url("https://www.asdhealthcare.com/AsdHealthcare/media/Structure/img/Masterpage/message-box/error-tab.png");
+		
+		}
+		.dialog-message {
+			font-family: 'Open Sans',arial;
+			font-size: 15px;
+		    line-height: 15px;
+		}
+		.leftslide {
+			left: -34% !important;	
+			
+		}
+        .footer_block{display:none;}
+        
+        @media screen and (max-width: 991px){
+            .fotterLogo {
+                padding-bottom:40px;
+            }
+            
+        }
+        @media screen and (max-width: 500px){
+            .footer_none{ display:none;}
+            #footer {background: none;background-color: #2592B1;padding-top:0px;}
+            .footer_block{display:block;color:white;}
+            #footer p {margin: 0;padding: 0;}
+        }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
+            .footer_none{ display:none;}
+            #footer {background: none;background-color: #2592B1;padding-top:0px;}
+            .footer_block{display:block;color:white;}
+            #footer p {margin: 0;padding: 0;}
+        }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+            .footer_none{ display:none;}
+            #footer {background: none;background-color: #2592B1;padding-top:0px;}
+            .footer_block{display:block;color:white;}
+            #footer p {margin: 0;padding: 0;}
+        }
+        @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
+            .footer_none{ display:none;}
+            #footer {background: none;background-color: #2592B1;padding-top:0px;}
+            .footer_block{display:block;color:white;}
+            #footer p {margin: 0;padding: 0;}
+        }
+        @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) { 
+            .footer_none{ display:none;}
+            #footer {background: none;background-color: #2592B1;padding-top:0px;}
+            .footer_block{display:block;color:white;}
+            #footer p {margin: 0;padding: 0;}
+        }
+        #notification-dialog {-webkit-animation-timing-function: linear;}
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-5 text-center footer_none">
+                <img src="{!URLFOR($Resource.ASDHealthcare,'img/question.png')}" />
+            </div>
+            <div class="col-md-5 col-sm-7 text-center">
+                <div class="footer-nav">
+                    <a class="footer_none" href="#"><span aria-hidden="true" class="glyphicon glyphicon-stop"></span> Live Chat</a>
+                    <a href="#"><span aria-hidden="true" class="glyphicon glyphicon-stop"></span> News</a>
+                    <a href="#"><span aria-hidden="true" class="glyphicon glyphicon-stop"></span> True Blue</a>
+                </div>
+               <!--   <p class="footer_none" style="color:white !important;"><small>Copyright {!$Label.FLU_FIRST_YEAR} AmerisourceBergen Corporation. All rights reserved.</small></p> -->
+            </div>
+            <div class="col-md-3 col-sm-12 text-center fotterLogo">
+                <img src="{!URLFOR($Resource.ASDHealthcare,'img/amerisource.png')}" />
+          <!--      <p class="footer_block" style="color:white !important;"><small>Copyright {!$Label.FLU_FIRST_YEAR} AmerisourceBergen Corporation. All rights reserved.</small></p> -->
+                <p>
+                    <small>
+                        <a href="https://www.asdhealthcare.com/terms-conditions">Term &amp; Conditions</a>&nbsp;&nbsp;&nbsp;
+                        <a href="https://www.asdhealthcare.com/privacy-policy">Privacy and policy</a>
+                    </small>
+                </p>
+                <p class="footer_block"> 800.746.6273</p>
+            </div>
+            <div id="notification-dialog" class="slide-out-div kentico-error open" style="line-height: 1; position: fixed; height: 125px; top: 202px; left: -3px; display: none;">
+				<a class="handle" href="#"></a>
+			 	<p></p>
+			<div class="dialog-message"> 
+		    	<img src="https://www.asdhealthcare.com/AsdHealthcare/media/Structure/img/Masterpage/message-box/icon-error.gif" /> &nbsp;<b>The following errors need your attention:</b><br/><br/><ul>Live Chat is not currently online</ul>
+	    	</div>
+		        <p></p>
+		
+		    </div>
+		</div>
+    </div>
+    
+    <!-- All Java Scripts for the app includes here -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+    <apex:includeScript value="{!URLFOR($Resource.ASDHealthcare, 'js/jquery.min.js')}"/>
+    <!-- Include all compiled plugins (below), or include individual files as needed --> 
+    <apex:includeScript value="{!URLFOR($Resource.ASDHealthcare, 'bootstrap-3.3.5/js/bootstrap.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ASDHealthcare, 'js/owl.carousel.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ASDHealthcare, 'js/jquery.cycle2.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ASDHealthcare, 'js/main.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ASDHealthcare, 'js/asd-custom.js')}"/>
+    <Script>
+    	$(".handle").on("click", function () {
+			$("#notification-dialog").hide(1000, "linear");
+		}); 
+    	
+    	jQuery(".footer_none").on("click", function () {
+	  		jQuery("#notification-dialog").show(1000, "linear");
+		});
+    
+    </Script>
+    
+    
+</apex:component>
