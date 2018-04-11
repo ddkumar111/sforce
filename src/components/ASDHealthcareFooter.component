@@ -9,7 +9,7 @@
  *  Revisoion Log   :   V_1.0 created
 **/
 -->
-<apex:component >
+<apex:component >    
     <style>
         
         .kentico-error.slide-out-div {
