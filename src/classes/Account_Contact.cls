@@ -1,8 +1,5 @@
 public class Account_Contact {
 
-
-         
-
         public Account  acc{get; set;}
         public Contact  conts{get; set;}
           
