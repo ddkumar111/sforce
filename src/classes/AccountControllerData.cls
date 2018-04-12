@@ -1,6 +1,6 @@
 public class AccountControllerData {
     
-    //Test
+    //Test11222
     //Enable this method for access in the aura component
     @AuraEnabled
     public static List<Account> getAccounts() {
